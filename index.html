@@ -3,42 +3,77 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>ТвійОПТ — Пошук вигідних товарів</title>
-  <meta name="description" content="Знаходимо товари оптом за найнижчими цінами серед перевірених постачальників. Напишіть у Telegram—бот, і ми підберемо найкращі варіанти." />
+  <meta name="description" content="Знаходимо товари оптом за найнижчими цінами серед перевірених постачальників. Напишіть у Telegram-бот, і ми підберемо найкращі варіанти." />
+  <meta name="theme-color" content="#4f46e5" />
 
-  <!-- Anti-FOUC guard -->
+  <!-- Favicon (швидкий варіант — одне джерело для всіх) -->
+  <link rel="icon" type="image/png" sizes="16x16"
+        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
+  <link rel="icon" type="image/png" sizes="32x32"
+        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
+  <link rel="icon" type="image/png" sizes="48x48"
+        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
+  <link rel="icon" type="image/png" sizes="96x96"
+        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
+  <link rel="icon" type="image/png" sizes="192x192"
+        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
+  <link rel="apple-touch-icon" sizes="180x180"
+        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
+
+  <!-- Якщо згенеруєш окремі файли, заміни на таке:
+  <link rel="icon" type="image/png" sizes="16x16"  href="/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32"  href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48"  href="/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="96x96"  href="/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  -->
+
+  <!-- Anti-FOUC guard + компенсація під fixed-header -->
   <style>
-    html{scroll-behavior:smooth}
-    html[data-tw-ready="0"] body{opacity:0;visibility:hidden}
-    html[data-tw-ready="1"] body{opacity:1;visibility:visible;transition:opacity .15s ease}
+    html { scroll-behavior: smooth; }
+    html[data-tw-ready="0"] body { opacity: 0; visibility: hidden; }
+    html[data-tw-ready="1"] body { opacity: 1; visibility: visible; transition: opacity .15s ease; }
+    :root { scroll-padding-top: 64px; }
   </style>
-  <script>document.documentElement.dataset.twReady="0";</script>
+  <script>document.documentElement.dataset.twReady = "0";</script>
 
+  <!-- Tailwind (CDN) з оптимізаціями -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
   <script src="https://cdn.tailwindcss.com" onload="document.documentElement.dataset.twReady='1'"></script>
 </head>
 
+
 <body class="bg-white text-gray-900 selection:bg-indigo-600/20">
 
-  <!-- HEADER (fixed + зарезервована висота) -->
+  <!-- HEADER (fixed + мобільне меню) -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="h-16 flex items-center justify-between">
-        <a href="#top" class="flex items-center gap-3">
+      <div class="h-16 grid grid-cols-[auto,1fr,auto] items-center gap-3">
+        <!-- Логотип -->
+        <a href="#top" class="flex items-center gap-3 min-w-0">
           <img
             src="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416"
             alt="ТвійОПТ"
             width="40" height="40"
             class="w-10 h-10 rounded-full object-cover border border-gray-300 shadow-sm"
-            loading="eager" fetchpriority="high">
-          <span class="leading-tight">
-            <span class="block font-extrabold text-xl tracking-tight">
+            loading="eager" fetchpriority="high" decoding="async">
+          <span class="leading-tight truncate">
+            <span class="block font-extrabold tracking-tight text-[clamp(16px,2.8vw,20px)]">
               <span class="text-black">Твій</span><span class="text-pink-600">ОПТ</span>
             </span>
-            <span class="block text-xs text-gray-500">Знайди товар вигідніше</span>
+            <span class="block text-[12px] text-gray-500">Знайди товар вигідніше</span>
           </span>
         </a>
+
+        <!-- Порожній розділювач для гріда -->
+        <div class="hidden md:block"></div>
+
+        <!-- Desktop menu -->
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="#features" class="hover:text-indigo-600">Переваги</a>
           <a href="#how" class="hover:text-indigo-600">Як це працює</a>
@@ -49,32 +84,57 @@
             Спробувати
           </a>
         </nav>
+
+        <!-- Mobile hamburger -->
+        <button id="menuBtn"
+                class="md:hidden justify-self-end inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-300 hover:bg-gray-50"
+                aria-expanded="false" aria-controls="mobileMenu" aria-label="Меню">
+          <svg class="h-5 w-5 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
     </div>
+
+    <!-- Mobile dropdown -->
+    <nav id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
+      <div class="max-w-7xl mx-auto px-4 py-3 grid gap-2 text-[15px]">
+        <a href="#features" class="py-2">Переваги</a>
+        <a href="#how" class="py-2">Як це працює</a>
+        <a href="#countries" class="py-2">Країни</a>
+        <a href="#reviews" class="py-2">Відгуки</a>
+        <a href="#contact" class="mt-1 inline-flex items-center justify-center rounded-xl px-4 py-3 bg-indigo-600 text-white hover:bg-indigo-500">
+          Спробувати
+        </a>
+      </div>
+    </nav>
   </header>
 
-  <!-- MAIN: контент з відступом від шапки -->
+  <!-- MAIN з відступом під фіксований хедер -->
   <main class="pt-16">
 
     <!-- HERO -->
     <section id="top" class="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18 lg:py-24">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+          <h1 class="font-extrabold leading-tight tracking-tight
+                     text-[clamp(28px,6.5vw,56px)]">
             Знаходь <span class="text-indigo-600">товари оптом</span> за найкращими цінами
           </h1>
-          <p class="mt-6 text-lg sm:text-xl text-gray-700">
+
+          <p class="mt-4 sm:mt-6 text-[clamp(15px,3.8vw,20px)] text-gray-700">
             Надішліть <span class="font-semibold text-indigo-600">фото</span> або короткий
             <span class="font-semibold text-emerald-600">опис</span> у Telegram-бот — ми підберемо
             <span class="font-semibold">якісні пропозиції з найнижчою ціною</span> від перевірених постачальників.
           </p>
-          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+
+          <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <a href="https://t.me/tvijShoppingBot" target="_blank"
-               class="px-8 py-4 rounded-2xl bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-500">
+               class="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-2xl bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-500 text-[15px] sm:text-base">
               Відкрити Telegram-бот
             </a>
             <a href="#features"
-               class="px-8 py-4 rounded-2xl border border-gray-300 text-gray-700 hover:bg-gray-100">
+               class="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-2xl border border-gray-300 text-gray-700 hover:bg-gray-100 text-[15px] sm:text-base">
               Дізнатись більше
             </a>
           </div>
@@ -82,60 +142,106 @@
       </div>
     </section>
 
-    <!-- ...тут решта твого сайту... -->
-
+    <!-- Далі твій контент: #features, #how, #countries, #reviews, #contact -->
   </main>
+
+  <!-- Маленький скрипт для меню -->
+  <script>
+    (function(){
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', () => {
+        const open = menu.classList.toggle('hidden') === false;
+        btn.setAttribute('aria-expanded', String(open));
+      });
+
+      // Закривати при натисканні на пункт меню
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded','false');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
 
-
-
-  <!-- ПЕРЕВАГИ (єдина секція) -->
-  <section id="features" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-extrabold">Наші переваги</h2>
-        <p class="mt-3 text-lg text-gray-600">Чому сотні клієнтів обирають саме нас</p>
-      </div>
-
-      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Card -->
-        <div class="rounded-2xl bg-white p-6 shadow hover:shadow-lg transition">
-          <div class="text-2xl mb-3">🔍</div>
-          <h3 class="font-bold text-gray-900">Пошук по фото та опису</h3>
-          <p class="mt-2 text-gray-700">Завантажте фото або опишіть товар — ми підберемо кращі варіанти серед десятків постачальників.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-6 shadow hover:shadow-lg transition">
-          <div class="text-2xl mb-3">✅</div>
-          <h3 class="font-bold text-gray-900">Гарантія якості</h3>
-          <p class="mt-2 text-gray-700">Працюємо лише з перевіреними партнерами та документами.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-6 shadow hover:shadow-lg transition">
-          <div class="text-2xl mb-3">💰</div>
-          <h3 class="font-bold text-gray-900">Найнижчі ціни</h3>
-          <p class="mt-2 text-gray-700">Підбираємо найвигідніші пропозиції на ринку.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-6 shadow hover:shadow-lg transition">
-          <div class="text-2xl mb-3">🚚</div>
-          <h3 class="font-bold text-gray-900">Швидка доставка</h3>
-          <p class="mt-2 text-gray-700">По Україні та з ЄС зазвичай 3–7 днів.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-6 shadow hover:shadow-lg transition">
-          <div class="text-2xl mb-3">📞</div>
-          <h3 class="font-bold text-gray-900">Підтримка 24/7</h3>
-          <p class="mt-2 text-gray-700">Менеджери на зв’язку у будь-який час.</p>
-        </div>
-        <div class="rounded-2xl bg-white p-6 shadow hover:shadow-lg transition">
-          <div class="text-2xl mb-3">👩‍💼</div>
-          <h3 class="font-bold text-gray-900">Персональний менеджер</h3>
-          <p class="mt-2 text-gray-700">Для постійних клієнтів — супровід та індивідуальні умови.</p>
-        </div>
-      </div>
+<!-- ПЕРЕВАГИ (адаптив + мобайл-френдлі) -->
+<section id="features" class="py-10 sm:py-16 lg:py-18 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Заголовок -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="font-extrabold text-gray-900
+                 text-[clamp(22px,5.5vw,32px)]">
+        Наші переваги
+      </h2>
+      <p class="mt-2 sm:mt-3 text-gray-600
+                text-[clamp(14px,4.2vw,18px)]">
+        Чому сотні клієнтів обирають саме нас
+      </p>
     </div>
-  </section>
+
+    <!-- Сітка карток -->
+    <div class="mt-8 sm:mt-10 grid gap-4 sm:gap-6
+                grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Картка -->
+      <article
+        class="rounded-2xl bg-white p-5 sm:p-6
+               shadow-sm hover:shadow-lg transition
+               focus-within:ring-2 focus-within:ring-indigo-200">
+        <div class="text-[22px] sm:text-2xl mb-2.5" aria-hidden="true">🔍</div>
+        <h3 class="font-bold text-gray-900 text-[clamp(16px,4.6vw,18px)]">
+          Пошук по фото та опису
+        </h3>
+        <p class="mt-1.5 text-gray-700 text-[clamp(14px,4.2vw,16px)]">
+          Завантажте фото або опишіть товар — ми підберемо кращі варіанти серед десятків постачальників.
+        </p>
+        <span class="sr-only">Перевага: пошук по фото та опису</span>
+      </article>
+
+      <article class="rounded-2xl bg-white p-5 sm:p-6 shadow-sm hover:shadow-lg transition focus-within:ring-2 focus-within:ring-indigo-200">
+        <div class="text-[22px] sm:text-2xl mb-2.5" aria-hidden="true">✅</div>
+        <h3 class="font-bold text-gray-900 text-[clamp(16px,4.6vw,18px)]">Гарантія якості</h3>
+        <p class="mt-1.5 text-gray-700 text-[clamp(14px,4.2vw,16px)]">Працюємо лише з перевіреними партнерами та документами.</p>
+        <span class="sr-only">Перевага: гарантія якості</span>
+      </article>
+
+      <article class="rounded-2xl bg-white p-5 sm:p-6 shadow-sm hover:shadow-lg transition focus-within:ring-2 focus-within:ring-indigo-200">
+        <div class="text-[22px] sm:text-2xl mb-2.5" aria-hidden="true">💰</div>
+        <h3 class="font-bold text-gray-900 text-[clamp(16px,4.6vw,18px)]">Найнижчі ціни</h3>
+        <p class="mt-1.5 text-gray-700 text-[clamp(14px,4.2vw,16px)]">Підбираємо найвигідніші пропозиції на ринку.</p>
+        <span class="sr-only">Перевага: найнижчі ціни</span>
+      </article>
+
+      <article class="rounded-2xl bg-white p-5 sm:p-6 shadow-sm hover:shadow-lg transition focus-within:ring-2 focus-within:ring-indigo-200">
+        <div class="text-[22px] sm:text-2xl mb-2.5" aria-hidden="true">🚚</div>
+        <h3 class="font-bold text-gray-900 text-[clamp(16px,4.6vw,18px)]">Швидка доставка</h3>
+        <p class="mt-1.5 text-gray-700 text-[clamp(14px,4.2vw,16px)]">По Україні та з ЄС зазвичай 3–7 днів.</p>
+        <span class="sr-only">Перевага: швидка доставка</span>
+      </article>
+
+      <article class="rounded-2xl bg-white p-5 sm:p-6 shadow-sm hover:shadow-lg transition focus-within:ring-2 focus-within:ring-indigo-200">
+        <div class="text-[22px] sm:text-2xl mb-2.5" aria-hidden="true">📞</div>
+        <h3 class="font-bold text-gray-900 text-[clamp(16px,4.6vw,18px)]">Підтримка 24/7</h3>
+        <p class="mt-1.5 text-gray-700 text-[clamp(14px,4.2vw,16px)]">Менеджери на зв’язку у будь-який час.</p>
+        <span class="sr-only">Перевага: підтримка 24/7</span>
+      </article>
+
+      <article class="rounded-2xl bg-white p-5 sm:p-6 shadow-sm hover:shadow-lg transition focus-within:ring-2 focus-within:ring-indigo-200">
+        <div class="text-[22px] sm:text-2xl mb-2.5" aria-hidden="true">👩‍💼</div>
+        <h3 class="font-bold text-gray-900 text-[clamp(16px,4.6vw,18px)]">Персональний менеджер</h3>
+        <p class="mt-1.5 text-gray-700 text-[clamp(14px,4.2vw,16px)]">Для постійних клієнтів — супровід та індивідуальні умови.</p>
+        <span class="sr-only">Перевага: персональний менеджер</span>
+      </article>
+    </div>
+  </div>
+</section>
 
   <!-- ЯК ЦЕ ПРАЦЮЄ -->
-  <section id="how" class="py-20 bg-white">
+  <section id="how" class="py-10 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-extrabold">Як це працює</h2>
@@ -179,7 +285,7 @@
     </div>
   </section>
 <!-- Популярні категорії -->
-<section id="categories" class="py-20 bg-white">
+<section id="categories" class="py-8 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
       <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Популярні категорії</h2>
@@ -246,158 +352,248 @@
   </div>
 </section>
 
-  <!-- КРАЇНИ (3 на екрані, гортання по 1) -->
-  <section id="countries" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Заголовок по центру -->
-      <div class="text-center">
-        <h2 class="text-3xl sm:text-4xl font-extrabold">Доставимо товари з різних країн</h2>
-      </div>
-
-      <!-- Кнопки праворуч (заховані на моб, щоб не заважали) -->
-      <div class="mt-6 flex justify-end">
-        <div class="hidden sm:flex items-center gap-3">
-          <button id="countriesPrev"
-            class="h-10 w-10 rounded-full bg-white shadow border border-gray-200 flex items-center justify-center hover:bg-gray-50"
-            aria-label="Попередня">‹</button>
-          <button id="countriesNext"
-            class="h-10 w-10 rounded-full bg-white shadow border border-gray-200 flex items-center justify-center hover:bg-gray-50"
-            aria-label="Наступна">›</button>
-        </div>
-      </div>
-
-      <!-- VIEWPORT -->
-      <div id="countriesViewport" class="mt-6 overflow-hidden">
-        <!-- TRACK: важливо зберегти px-4 та gap-6 (вони використовуються в JS для точних розрахунків) -->
-        <div id="countriesTrack" class="flex gap-6 px-4 will-change-transform">
-          <!-- Одна картка -->
-          <article class="country-card">
-            <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition p-8 flex flex-col items-center border border-gray-100">
-              <div class="w-36 h-36 rounded-full bg-white shadow ring-1 ring-gray-100 flex items-center justify-center">
-                <img src="https://flagcdn.com/w160/cn.png" alt="China" class="w-24 h-24 object-contain">
-              </div>
-              <h3 class="mt-6 text-2xl font-bold">Китай</h3>
-              <p class="mt-1 text-gray-600">Доставка напряму</p>
-            </div>
-          </article>
-
-          <article class="country-card">
-            <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition p-8 flex flex-col items-center border border-gray-100">
-              <div class="w-36 h-36 rounded-full bg-white shadow ring-1 ring-gray-100 flex items-center justify-center">
-                <img src="https://flagcdn.com/w160/jp.png" alt="Japan" class="w-24 h-24 object-contain">
-              </div>
-              <h3 class="mt-6 text-2xl font-bold">Японія</h3>
-              <p class="mt-1 text-gray-600">Краще зі світу</p>
-            </div>
-          </article>
-
-          <article class="country-card">
-            <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition p-8 flex flex-col items-center border border-gray-100">
-              <div class="w-36 h-36 rounded-full bg-white shadow ring-1 ring-gray-100 flex items-center justify-center">
-                <img src="https://flagcdn.com/w160/kr.png" alt="Korea" class="w-24 h-24 object-contain">
-              </div>
-              <h3 class="mt-6 text-2xl font-bold">Корея</h3>
-              <p class="mt-1 text-gray-600">Популярні бренди</p>
-            </div>
-          </article>
-
-          <article class="country-card">
-            <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition p-8 flex flex-col items-center border border-gray-100">
-              <div class="w-36 h-36 rounded-full bg-white shadow ring-1 ring-gray-100 flex items-center justify-center">
-                <img src="https://flagcdn.com/w160/sg.png" alt="Singapore" class="w-24 h-24 object-contain">
-              </div>
-              <h3 class="mt-6 text-2xl font-bold">Сінгапур</h3>
-              <p class="mt-1 text-gray-600">Якісні товари</p>
-            </div>
-          </article>
-
-          <article class="country-card">
-            <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition p-8 flex flex-col items-center border border-gray-100">
-              <div class="w-36 h-36 rounded-full bg-white shadow ring-1 ring-gray-100 flex items-center justify-center">
-                <img src="https://flagcdn.com/w160/eu.png" alt="Europe" class="w-24 h-24 object-contain">
-              </div>
-              <h3 class="mt-6 text-2xl font-bold">Європа</h3>
-              <p class="mt-1 text-gray-600">Гарантія та сертифікати</p>
-            </div>
-          </article>
-
-          <article class="country-card">
-            <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition p-8 flex flex-col items-center border border-gray-100">
-              <div class="w-36 h-36 rounded-full bg-white shadow ring-1 ring-gray-100 flex items-center justify-center">
-                <img src="https://flagcdn.com/w160/in.png" alt="India" class="w-24 h-24 object-contain">
-              </div>
-              <h3 class="mt-6 text-2xl font-bold">Індія</h3>
-              <p class="mt-1 text-gray-600">Текстиль та спеції</p>
-            </div>
-          </article>
-
-          <article class="country-card">
-            <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition p-8 flex flex-col items-center border border-gray-100">
-              <div class="w-36 h-36 rounded-full bg-white shadow ring-1 ring-gray-100 flex items-center justify-center">
-                <img src="https://flagcdn.com/w160/us.png" alt="USA" class="w-24 h-24 object-contain">
-              </div>
-              <h3 class="mt-6 text-2xl font-bold">США</h3>
-              <p class="mt-1 text-gray-600">Оригінальні бренди</p>
-            </div>
-          </article>
-
-          <article class="country-card">
-            <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition p-8 flex flex-col items-center border border-gray-100">
-              <div class="w-36 h-36 rounded-full bg-white shadow ring-1 ring-gray-100 flex items-center justify-center">
-                <img src="https://flagcdn.com/w160/tr.png" alt="Turkey" class="w-24 h-24 object-contain">
-              </div>
-              <h3 class="mt-6 text-2xl font-bold">Туреччина</h3>
-              <p class="mt-1 text-gray-600">Одяг та взуття</p>
-            </div>
-          </article>
-        </div>
-      </div>
+ <!-- КРАЇНИ (адаптивна карусель 1/2/3 з автоплей та свайпом) -->
+<section id="countries" class="py-10 sm:py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Заголовок -->
+    <div class="text-center">
+      <h2 class="font-extrabold text-gray-900 text-[clamp(22px,5.5vw,32px)]">
+        Доставимо товари з різних країн
+      </h2>
     </div>
 
-    <!-- Карусель 3-по-одній -->
-    <script>
-      (function () {
-        const viewport = document.getElementById('countriesViewport');
-        const track    = document.getElementById('countriesTrack');
-        const prevBtn  = document.getElementById('countriesPrev');
-        const nextBtn  = document.getElementById('countriesNext');
-        const PADDING = 16; // px-4
-        const GAP = 24;     // gap-6
-        const VISIBLE = 3;
-        let slideW = 0, index = 0;
+    <!-- Кнопки -->
+    <div class="mt-5 flex items-center justify-center sm:justify-end gap-3">
+      <button id="countriesPrev"
+        class="h-11 w-11 rounded-full bg-white shadow border border-gray-200 flex items-center justify-center
+               hover:bg-gray-50 active:scale-95 transition"
+        aria-label="Попередня">‹</button>
+      <button id="countriesNext"
+        class="h-11 w-11 rounded-full bg-white shadow border border-gray-200 flex items-center justify-center
+               hover:bg-gray-50 active:scale-95 transition"
+        aria-label="Наступна">›</button>
+    </div>
 
-        function setWidths(){
-          const vw = Math.round(viewport.getBoundingClientRect().width);
-          const usable = vw - (PADDING * 2);
-          slideW = Math.floor((usable - GAP * (VISIBLE - 1)) / VISIBLE);
-          [...track.children].forEach(sl => {
-            sl.style.flex = '0 0 auto';
-            sl.style.width = slideW + 'px';
-          });
-          translate(index, false);
-        }
+    <!-- В’юпорт -->
+    <div id="countriesViewport" class="mt-6 overflow-hidden select-none">
+      <!-- ВАЖЛИВО: px-4 + gap-6 збігаються з JS -->
+      <div id="countriesTrack" class="flex gap-6 px-4 will-change-transform">
+        <!-- Картки -->
+        <article class="country-card">
+          <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition
+                      p-8 flex flex-col items-center border border-gray-100">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white shadow ring-1 ring-gray-100
+                        flex items-center justify-center">
+              <img src="https://flagcdn.com/w160/cn.png" alt="Китай" loading="lazy"
+                   class="w-20 h-20 sm:w-24 sm:h-24 object-contain">
+            </div>
+            <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-bold">Китай</h3>
+            <p class="mt-1 text-gray-600">Доставка напряму</p>
+          </div>
+        </article>
 
-        function translate(i, smooth = true){
-          index = Math.max(0, Math.min(i, track.children.length - VISIBLE));
-          const x = -(index * (slideW + GAP));
-          track.style.transition = smooth ? 'transform .35s ease' : 'none';
-          track.style.transform  = `translate3d(${x}px,0,0)`;
-        }
+        <article class="country-card">
+          <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition
+                      p-8 flex flex-col items-center border border-gray-100">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white shadow ring-1 ring-gray-100
+                        flex items-center justify-center">
+              <img src="https://flagcdn.com/w160/jp.png" alt="Японія" loading="lazy"
+                   class="w-20 h-20 sm:w-24 sm:h-24 object-contain">
+            </div>
+            <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-bold">Японія</h3>
+            <p class="mt-1 text-gray-600">Краще зі світу</p>
+          </div>
+        </article>
 
-        function next(){ index < track.children.length - VISIBLE ? translate(index+1) : translate(0); }
-        function prev(){ index > 0 ? translate(index-1) : translate(track.children.length - VISIBLE); }
+        <article class="country-card">
+          <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition
+                      p-8 flex flex-col items-center border border-gray-100">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white shadow ring-1 ring-gray-100
+                        flex items-center justify-center">
+              <img src="https://flagcdn.com/w160/kr.png" alt="Корея" loading="lazy"
+                   class="w-20 h-20 sm:w-24 sm:h-24 object-contain">
+            </div>
+            <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-bold">Корея</h3>
+            <p class="mt-1 text-gray-600">Популярні бренди</p>
+          </div>
+        </article>
 
-        window.addEventListener('resize', setWidths);
-        prevBtn?.addEventListener('click', prev);
-        nextBtn?.addEventListener('click', next);
+        <article class="country-card">
+          <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition
+                      p-8 flex flex-col items-center border border-gray-100">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white shadow ring-1 ring-gray-100
+                        flex items-center justify-center">
+              <img src="https://flagcdn.com/w160/sg.png" alt="Сінгапур" loading="lazy"
+                   class="w-20 h-20 sm:w-24 sm:h-24 object-contain">
+            </div>
+            <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-bold">Сінгапур</h3>
+            <p class="mt-1 text-gray-600">Якісні товари</p>
+          </div>
+        </article>
 
-        setWidths();
-      })();
-    </script>
-  </section>
+        <article class="country-card">
+          <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition
+                      p-8 flex flex-col items-center border border-gray-100">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white shadow ring-1 ring-gray-100
+                        flex items-center justify-center">
+              <img src="https://flagcdn.com/w160/eu.png" alt="Європа" loading="lazy"
+                   class="w-20 h-20 sm:w-24 sm:h-24 object-contain">
+            </div>
+            <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-bold">Європа</h3>
+            <p class="mt-1 text-gray-600">Гарантія та сертифікати</p>
+          </div>
+        </article>
+
+        <article class="country-card">
+          <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition
+                      p-8 flex flex-col items-center border border-gray-100">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white shadow ring-1 ring-gray-100
+                        flex items-center justify-center">
+              <img src="https://flagcdn.com/w160/in.png" alt="Індія" loading="lazy"
+                   class="w-20 h-20 sm:w-24 sm:h-24 object-contain">
+            </div>
+            <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-bold">Індія</h3>
+            <p class="mt-1 text-gray-600">Текстиль та спеції</p>
+          </div>
+        </article>
+
+        <article class="country-card">
+          <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition
+                      p-8 flex flex-col items-center border border-gray-100">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white shadow ring-1 ring-gray-100
+                        flex items-center justify-center">
+              <img src="https://flagcdn.com/w160/us.png" alt="США" loading="lazy"
+                   class="w-20 h-20 sm:w-24 sm:h-24 object-contain">
+            </div>
+            <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-bold">США</h3>
+            <p class="mt-1 text-gray-600">Оригінальні бренди</p>
+          </div>
+        </article>
+
+        <article class="country-card">
+          <div class="h-full bg-white rounded-3xl shadow-sm hover:shadow-md transition
+                      p-8 flex flex-col items-center border border-gray-100">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-white shadow ring-1 ring-gray-100
+                        flex items-center justify-center">
+              <img src="https://flagcdn.com/w160/tr.png" alt="Туреччина" loading="lazy"
+                   class="w-20 h-20 sm:w-24 sm:h-24 object-contain">
+            </div>
+            <h3 class="mt-5 sm:mt-6 text-xl sm:text-2xl font-bold">Туреччина</h3>
+            <p class="mt-1 text-gray-600">Одяг та взуття</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- Логіка каруселі -->
+  <script>
+    (function () {
+      const viewport = document.getElementById('countriesViewport');
+      const track    = document.getElementById('countriesTrack');
+      const prevBtn  = document.getElementById('countriesPrev');
+      const nextBtn  = document.getElementById('countriesNext');
+
+      // Значення мають відповідати класам: px-4 (16px), gap-6 (24px)
+      const PADDING = 16;
+      const GAP     = 24;
+
+      let visible = 3;       // 1 / 2 / 3 (xs / sm-md / lg)
+      let slideW  = 0;
+      let index   = 0;
+      let autoplayId = null;
+      let pause = false;
+
+      function computeVisible() {
+        const w = window.innerWidth;
+        visible = (w < 640) ? 1 : (w < 1024) ? 2 : 3;
+      }
+
+      function setWidths() {
+        computeVisible();
+        const vw = Math.round(viewport.getBoundingClientRect().width);
+        const usable = vw - (PADDING * 2);
+        slideW = Math.floor((usable - GAP * (visible - 1)) / visible); // без субпікселів
+        Array.from(track.children).forEach(sl => {
+          sl.style.flex = '0 0 auto';
+          sl.style.width = slideW + 'px';
+        });
+        translate(index, false);
+      }
+
+      function translate(i, smooth = true) {
+        const maxIndex = Math.max(0, track.children.length - visible);
+        index = Math.max(0, Math.min(i, maxIndex));
+        const x = -(index * (slideW + GAP));
+        track.style.transition = smooth ? 'transform .35s ease' : 'none';
+        track.style.transform  = `translate3d(${x}px,0,0)`;
+      }
+
+      function next() {
+        const maxIndex = Math.max(0, track.children.length - visible);
+        translate(index < maxIndex ? index + 1 : 0);
+      }
+      function prev() {
+        const maxIndex = Math.max(0, track.children.length - visible);
+        translate(index > 0 ? index - 1 : maxIndex);
+      }
+
+      // Свайп (тач)
+      let startX = 0, dx = 0;
+      viewport.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX; dx = 0; pause = true;
+      }, {passive:true});
+      viewport.addEventListener('touchmove', (e) => {
+        dx = e.touches[0].clientX - startX;
+      }, {passive:true});
+      viewport.addEventListener('touchend', () => {
+        if (Math.abs(dx) > 40) (dx < 0 ? next : prev)();
+        pause = false;
+      });
+
+      // Ховер-пауза
+      viewport.addEventListener('mouseenter', () => pause = true);
+      viewport.addEventListener('mouseleave', () => pause = false);
+
+      // Клавіатура
+      viewport.setAttribute('tabindex', '0');
+      viewport.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft')  prev();
+      });
+
+      // Автоплей (поважає reduced-motion)
+      function startAutoplay() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        stopAutoplay();
+        autoplayId = setInterval(() => { if (!pause) next(); }, 4000);
+      }
+      function stopAutoplay() {
+        if (autoplayId) { clearInterval(autoplayId); autoplayId = null; }
+      }
+
+      // Події
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+      window.addEventListener('resize', setWidths);
+
+      // Старт
+      setWidths();
+      startAutoplay();
+
+      // Автопауза, коли блоку не видно
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => e.isIntersecting ? startAutoplay() : stopAutoplay());
+      }, {threshold: 0.2});
+      io.observe(viewport);
+    })();
+  </script>
+</section>
+
+
 
   <!-- ВІДГУКИ (автокарусель без “ривків”) -->
-  <section id="reviews" class="py-20 bg-gray-50">
+  <section id="reviews" class="py-10 bg-gray-50">
     <style>
       #rv-viewport::-webkit-scrollbar{display:none}
       #rv-viewport{-ms-overflow-style:none;scrollbar-width:none}
@@ -447,7 +643,7 @@
       </div>
     </div>
 <!-- FAQ -->
-<section id="faq" class="py-20 bg-white">
+<section id="faq" class="py-10 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto">
       <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">FAQ — часті запитання</h2>
@@ -641,7 +837,7 @@
   </section>
 
   <!-- ЛІД-ФОРМА -->
-  <section id="contact" class="py-20 bg-gray-50">
+  <section id="contact" class="py-10 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 items-start">
         <div>
