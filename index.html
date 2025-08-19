@@ -21,20 +21,21 @@
 
 <body class="bg-white text-gray-900 selection:bg-indigo-600/20">
 
-  <!-- NAV -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+  <!-- HEADER (fixed + зарезервована висота) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="h-16 flex items-center justify-between">
         <a href="#top" class="flex items-center gap-3">
-          <!-- Логотип -->
-          <img src="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416" 
-               alt="ТвійОПТ" class="w-10 h-10 rounded-full object-cover border border-gray-300 shadow-sm">
-          
-          <!-- Текст -->
+          <img
+            src="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416"
+            alt="ТвійОПТ"
+            width="40" height="40"
+            class="w-10 h-10 rounded-full object-cover border border-gray-300 shadow-sm"
+            loading="eager" fetchpriority="high">
           <span class="leading-tight">
             <span class="block font-extrabold text-xl tracking-tight">
-  <span class="text-black">Твій</span><span class="text-pink-600">ОПТ</span>
-</span>
+              <span class="text-black">Твій</span><span class="text-pink-600">ОПТ</span>
+            </span>
             <span class="block text-xs text-gray-500">Знайди товар вигідніше</span>
           </span>
         </a>
@@ -43,37 +44,50 @@
           <a href="#how" class="hover:text-indigo-600">Як це працює</a>
           <a href="#countries" class="hover:text-indigo-600">Країни</a>
           <a href="#reviews" class="hover:text-indigo-600">Відгуки</a>
-          <a href="#contact" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500">Спробувати</a>
+          <a href="#contact"
+             class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500">
+            Спробувати
+          </a>
         </nav>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="top" class="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
-          Знаходь <span class="text-indigo-600">товари оптом</span> за найкращими цінами
-        </h1>
-        <p class="mt-6 text-lg sm:text-xl text-gray-700">
-          Надішліть <span class="font-semibold text-indigo-600">фото</span> або короткий <span class="font-semibold text-emerald-600">опис</span> у Telegram-бот — ми підберемо
-          <span class="font-semibold">якісні пропозиції з найнижчою ціною</span> від перевірених постачальників.
-        </p>
-        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://t.me/tvijShoppingBot" target="_blank" class="px-8 py-4 rounded-2xl bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-500">
-            Відкрити Telegram-бот
-          </a>
-          <a href="#features" class="px-8 py-4 rounded-2xl border border-gray-300 text-gray-700 hover:bg-gray-100">
-            Дізнатись більше
-          </a>
+  <!-- MAIN: контент з відступом від шапки -->
+  <main class="pt-16">
+
+    <!-- HERO -->
+    <section id="top" class="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+            Знаходь <span class="text-indigo-600">товари оптом</span> за найкращими цінами
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-gray-700">
+            Надішліть <span class="font-semibold text-indigo-600">фото</span> або короткий
+            <span class="font-semibold text-emerald-600">опис</span> у Telegram-бот — ми підберемо
+            <span class="font-semibold">якісні пропозиції з найнижчою ціною</span> від перевірених постачальників.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://t.me/tvijShoppingBot" target="_blank"
+               class="px-8 py-4 rounded-2xl bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-500">
+              Відкрити Telegram-бот
+            </a>
+            <a href="#features"
+               class="px-8 py-4 rounded-2xl border border-gray-300 text-gray-700 hover:bg-gray-100">
+              Дізнатись більше
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- ...тут решта твого сайту... -->
+
+  </main>
 </body>
 </html>
+
 
 
   <!-- ПЕРЕВАГИ (єдина секція) -->
@@ -733,7 +747,7 @@
         <div>
           <div class="flex items-center gap-3">
             <span class="w-9 h-9 rounded-2xl bg-gradient-to-br from-indigo-600 to-pink-600"></span>
-            <span class="text-lg font-bold text-white">ОптомДешевше</span>
+            <span class="text-lg font-bold text-white">ТвійОПТ</span>
           </div>
           <p class="mt-4 text-sm text-gray-400">Шукаємо для вас вигідні пропозиції серед перевірених постачальників.</p>
         </div>
