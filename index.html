@@ -3,77 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Умови співпраці — ТвійОПТ</title>
+  <meta name="description" content="Умови співпраці з ТвійОПТ: оплата, MOQ, контроль якості, логістика, митне оформлення, рекламації, конфіденційність." />
 
-  <title>ТвійОПТ — Пошук вигідних товарів</title>
-  <meta name="description" content="Знаходимо товари оптом за найнижчими цінами серед перевірених постачальників. Напишіть у Telegram-бот, і ми підберемо найкращі варіанти." />
-  <meta name="theme-color" content="#4f46e5" />
-
-  <!-- Favicon (швидкий варіант — одне джерело для всіх) -->
-  <link rel="icon" type="image/png" sizes="16x16"
-        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
-  <link rel="icon" type="image/png" sizes="32x32"
-        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
-  <link rel="icon" type="image/png" sizes="48x48"
-        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
-  <link rel="icon" type="image/png" sizes="96x96"
-        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
-  <link rel="icon" type="image/png" sizes="192x192"
-        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
-  <link rel="apple-touch-icon" sizes="180x180"
-        href="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416">
-
-  <!-- Якщо згенеруєш окремі файли, заміни на таке:
-  <link rel="icon" type="image/png" sizes="16x16"  href="/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32"  href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="48x48"  href="/favicon-48.png">
-  <link rel="icon" type="image/png" sizes="96x96"  href="/favicon-96.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  -->
-
-  <!-- Anti-FOUC guard + компенсація під fixed-header -->
+  <!-- Anti-FOUC guard -->
   <style>
-    html { scroll-behavior: smooth; }
-    html[data-tw-ready="0"] body { opacity: 0; visibility: hidden; }
-    html[data-tw-ready="1"] body { opacity: 1; visibility: visible; transition: opacity .15s ease; }
-    :root { scroll-padding-top: 64px; }
+    html{scroll-behavior:smooth}
+    html[data-tw-ready="0"] body{opacity:0;visibility:hidden}
+    html[data-tw-ready="1"] body{opacity:1;visibility:visible;transition:opacity .15s ease}
   </style>
-  <script>document.documentElement.dataset.twReady = "0";</script>
+  <script>document.documentElement.dataset.twReady="0";</script>
 
-  <!-- Tailwind (CDN) з оптимізаціями -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
   <script src="https://cdn.tailwindcss.com" onload="document.documentElement.dataset.twReady='1'"></script>
 </head>
 
-
 <body class="bg-white text-gray-900 selection:bg-indigo-600/20">
 
-  <!-- HEADER (fixed + мобільне меню) -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+  <!-- NAV (desktop + mobile) -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="h-16 grid grid-cols-[auto,1fr,auto] items-center gap-3">
-        <!-- Логотип -->
-        <a href="#top" class="flex items-center gap-3 min-w-0">
-          <img
-            src="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416"
-            alt="ТвійОПТ"
-            width="40" height="40"
-            class="w-10 h-10 rounded-full object-cover border border-gray-300 shadow-sm"
-            loading="eager" fetchpriority="high" decoding="async">
-          <span class="leading-tight truncate">
-            <span class="block font-extrabold tracking-tight text-[clamp(16px,2.8vw,20px)]">
+      <div class="h-16 flex items-center justify-between">
+        <!-- Лого -->
+        <a href="index.html#top" class="flex items-center gap-3">
+          <img src="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416"
+               alt="ТвійОПТ" class="w-10 h-10 rounded-full object-cover border border-gray-300 shadow-sm">
+          <span class="leading-tight">
+            <span class="block font-extrabold text-xl tracking-tight">
               <span class="text-black">Твій</span><span class="text-pink-600">ОПТ</span>
             </span>
-            <span class="block text-[12px] text-gray-500">Знайди товар вигідніше</span>
+            <span class="block text-xs text-gray-500">Знайди товар вигідніше</span>
           </span>
         </a>
 
-        <!-- Порожній розділювач для гріда -->
-        <div class="hidden md:block"></div>
+        <!-- Бургер -->
+        <button id="navToggle" class="md:hidden inline-flex items-center justify-center w-10 h-10
+                rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-100"
+                aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobileNav">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
 
-        <!-- Desktop menu -->
+        <!-- Десктоп-меню -->
 <nav class="hidden md:flex items-center gap-6 text-sm">
   <a href="#features" class="hover:text-indigo-600">Переваги</a>
   <a href="#how" class="hover:text-indigo-600">Як це працює</a>
@@ -87,16 +61,6 @@
   </a>
 </nav>
 
-
-
-        <!-- Mobile hamburger -->
-        <button id="menuBtn"
-                class="md:hidden justify-self-end inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-300 hover:bg-gray-50"
-                aria-expanded="false" aria-controls="mobileMenu" aria-label="Меню">
-          <svg class="h-5 w-5 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
       </div>
     </div>
 
@@ -118,6 +82,7 @@
     </a>
   </div>
 </nav>
+
   </header>
 
   <!-- MAIN з відступом під фіксований хедер -->
