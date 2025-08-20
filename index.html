@@ -252,7 +252,7 @@
           </span>
           <div>
             <div class="text-4xl font-extrabold text-indigo-700 leading-none">
-              <span class="counter" data-target="800" data-suffix="+">0</span>
+              <span class="counter" data-target="800" data-duration="3000">0</span><span>+</span>
             </div>
             <div class="mt-1 text-gray-700 font-medium">Постійних клієнтів</div>
           </div>
@@ -272,7 +272,7 @@
           </span>
           <div>
             <div class="text-4xl font-extrabold text-indigo-700 leading-none">
-              <span class="counter" data-target="3200" data-suffix="+"></span>
+              <span class="counter" data-target="3200" data-duration="3000">0</span><span>+</span>
             </div>
             <div class="mt-1 text-gray-700 font-medium">Виконаних замовлень</div>
           </div>
@@ -292,7 +292,7 @@
           </span>
           <div>
             <div class="text-4xl font-extrabold text-indigo-700 leading-none">
-              <span class="counter" data-target="150" data-suffix="+"></span>
+              <span class="counter" data-target="150" data-duration="3000">0</span><span>+</span>
             </div>
             <div class="mt-1 text-gray-700 font-medium">Перевірених постачальників</div>
           </div>
@@ -332,7 +332,7 @@
           </span>
           <div>
             <div class="text-4xl font-extrabold text-indigo-700 leading-none">
-              <span class="counter" data-target="25000" data-suffix="+"></span>
+              <span class="counter" data-target="25000" data-duration="3000">0</span><span>+</span>
             </div>
             <div class="mt-1 text-gray-700 font-medium">Позицій знайдено для клієнтів</div>
           </div>
@@ -1195,7 +1195,6 @@
   const y = document.getElementById('y');
   if (y) y.textContent = new Date().getFullYear();
 </script>
-
   <!-- Постійна Telegram-кнопка (FAB) -->
   <style>
     .bot-fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:2147483647}
@@ -1212,6 +1211,51 @@
   <script>
     (function(){const f=document.getElementById('botFab'); if(f && f.parentElement!==document.body){document.body.appendChild(f);} })();
   </script>
+<script>
+(function () {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('mobileNav');
+  if (!btn || !nav) return;
+
+  const ICON_BURGER = 'M4 6h16M4 12h16M4 18h16';
+  const ICON_CLOSE  = 'M6 6l12 12M18 6l-12 12';
+  const svgPath = btn.querySelector('path');
+  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function openNav() {
+    btn.setAttribute('aria-expanded', 'true');
+    if (svgPath) svgPath.setAttribute('d', ICON_CLOSE);
+    nav.style.maxHeight = nav.scrollHeight + 'px';
+    document.body.style.overflow = 'hidden';
+    nav.dataset.open = '1';
+  }
+  function closeNav() {
+    btn.setAttribute('aria-expanded', 'false');
+    if (svgPath) svgPath.setAttribute('d', ICON_BURGER);
+    nav.style.maxHeight = '0px';
+    document.body.style.overflow = '';
+    delete nav.dataset.open;
+  }
+  function toggleNav(){ nav.dataset.open === '1' ? closeNav() : openNav(); }
+
+  btn.addEventListener('click', toggleNav);
+  nav.addEventListener('click', e => { if (e.target.closest('a')) closeNav(); });
+  document.addEventListener('click', e => {
+    if (nav.dataset.open && !nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.dataset.open) closeNav(); });
+
+  // Закривати при виході на десктоп (≥1024px)
+  function handleResize(){
+    if (window.matchMedia('(min-width: 1024px)').matches) closeNav();
+  }
+  window.addEventListener('resize', handleResize);
+
+  // Початковий стан
+  nav.style.maxHeight = '0px';
+  if (prefersReduce) nav.style.transition = 'none';
+})();
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   function animateCounter(el) {
@@ -1244,4 +1288,3 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
-
