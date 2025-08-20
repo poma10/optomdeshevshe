@@ -21,69 +21,68 @@
 
 <body class="bg-white text-gray-900 selection:bg-indigo-600/20">
 
-  <!-- NAV (desktop + mobile) -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="h-16 flex items-center justify-between">
-        <!-- Лого -->
-        <a href="index.html#top" class="flex items-center gap-3">
-          <img src="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416"
-               alt="ТвійОПТ" class="w-10 h-10 rounded-full object-cover border border-gray-300 shadow-sm">
-          <span class="leading-tight">
-            <span class="block font-extrabold text-xl tracking-tight">
-              <span class="text-black">Твій</span><span class="text-pink-600">ОПТ</span>
-            </span>
-            <span class="block text-xs text-gray-500">Знайди товар вигідніше</span>
+<!-- NAV (desktop + mobile) -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="h-16 flex items-center justify-between">
+      <!-- Лого -->
+      <a href="index.html#top" class="flex items-center gap-3">
+        <img src="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416"
+             alt="ТвійОПТ" class="w-10 h-10 rounded-full object-cover border border-gray-300 shadow-sm">
+        <span class="leading-tight">
+          <span class="block font-extrabold text-xl tracking-tight">
+            <span class="text-black">Твій</span><span class="text-pink-600">ОПТ</span>
           </span>
+          <span class="block text-xs text-gray-500">Знайди товар вигідніше</span>
+        </span>
+      </a>
+
+      <!-- Бургер -->
+      <button id="navToggle" class="lg:hidden inline-flex items-center justify-center w-10 h-10
+              rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-100"
+              aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobileNav">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Десктоп-меню -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm">
+        <a href="index.html#features"  class="hover:text-indigo-600">Переваги</a>
+        <a href="index.html#how"       class="hover:text-indigo-600">Як це працює</a>
+        <a href="index.html#countries" class="hover:text-indigo-600">Країни</a>
+        <a href="index.html#reviews"   class="hover:text-indigo-600">Відгуки</a>
+        <a href="pro-nas.html"         class="hover:text-indigo-600">Про нас</a>
+        <a href="umovy.html"           class="hover:text-indigo-600">Умови Співпраці</a>
+        <a href="contacts.html"        class="hover:text-indigo-600">Контакти</a>
+        <a href="index.html#contact"
+           class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500">
+          Спробувати
         </a>
-
-        <!-- Бургер -->
-        <button id="navToggle" class="md:hidden inline-flex items-center justify-center w-10 h-10
-                rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-100"
-                aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobileNav">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-
-        <!-- Десктоп-меню -->
-<nav class="hidden md:flex items-center gap-6 text-sm">
-  <a href="#features" class="hover:text-indigo-600">Переваги</a>
-  <a href="#how" class="hover:text-indigo-600">Як це працює</a>
-  <a href="#countries" class="hover:text-indigo-600">Країни</a>
-  <a href="#reviews" class="hover:text-indigo-600">Відгуки</a>
-  <a href="pro-nas.html" class="hover:text-indigo-600">Про нас</a>
-  <a href="umovy.html" class="hover:text-indigo-600">Умови Співпраці</a>
-  <a href="contacts.html" class="hover:text-indigo-600">Контакти</a>
-  <a href="#contact" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500">
-    Спробувати
-  </a>
-</nav>
-
-      </div>
+      </nav>
     </div>
-
-<!-- Мобільне меню -->
-<nav id="mobileNav"
-     class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out">
-  <div class="px-4 pb-4 pt-2 space-y-1 border-t border-gray-200 bg-white">
-    <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Головна</a>
-    <a href="index.html#features" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Переваги</a>
-    <a href="index.html#how" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Як це працює</a>
-    <a href="index.html#countries" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Країни</a>
-    <a href="index.html#reviews" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Відгуки</a>
-    <a href="pro-nas.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Про нас</a>
-    <a href="umovy.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Умови Співпраці</a>
-    <a href="contacts.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Контакти</a>
-    <a href="index.html#contact"
-       class="block text-center px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500">
-      Спробувати
-    </a>
   </div>
-</nav>
 
-  </header>
+  <!-- Мобільне меню -->
+  <nav id="mobileNav"
+       class="lg:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out">
+    <div class="px-4 pb-4 pt-2 space-y-1 border-t border-gray-200 bg-white">
+      <a href="index.html"           class="block px-3 py-2 rounded-lg hover:bg-gray-100">Головна</a>
+      <a href="index.html#features"  class="block px-3 py-2 rounded-lg hover:bg-gray-100">Переваги</a>
+      <a href="index.html#how"       class="block px-3 py-2 rounded-lg hover:bg-gray-100">Як це працює</a>
+      <a href="index.html#countries" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Країни</a>
+      <a href="index.html#reviews"   class="block px-3 py-2 rounded-lg hover:bg-gray-100">Відгуки</a>
+      <a href="pro-nas.html"         class="block px-3 py-2 rounded-lg hover:bg-gray-100">Про нас</a>
+      <a href="umovy.html"           class="block px-3 py-2 rounded-lg hover:bg-gray-100">Умови Співпраці</a>
+      <a href="contacts.html"        class="block px-3 py-2 rounded-lg hover:bg-gray-100">Контакти</a>
+      <a href="index.html#contact"
+         class="block text-center px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500">
+        Спробувати
+      </a>
+    </div>
+  </nav>
+</header>
 
   <!-- HERO -->
   <section class="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white">
@@ -356,6 +355,52 @@
   <script>
     (function(){const f=document.getElementById('botFab'); if(f && f.parentElement!==document.body){document.body.appendChild(f);} })();
   </script>
+<script>
+(function () {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('mobileNav');
+  if (!btn || !nav) return;
+
+  const ICON_BURGER = 'M4 6h16M4 12h16M4 18h16';
+  const ICON_CLOSE  = 'M6 6l12 12M18 6l-12 12';
+  const svgPath = btn.querySelector('path');
+  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function openNav() {
+    btn.setAttribute('aria-expanded', 'true');
+    if (svgPath) svgPath.setAttribute('d', ICON_CLOSE);
+    nav.style.maxHeight = nav.scrollHeight + 'px';
+    document.body.style.overflow = 'hidden';
+    nav.dataset.open = '1';
+  }
+  function closeNav() {
+    btn.setAttribute('aria-expanded', 'false');
+    if (svgPath) svgPath.setAttribute('d', ICON_BURGER);
+    nav.style.maxHeight = '0px';
+    document.body.style.overflow = '';
+    delete nav.dataset.open;
+  }
+  function toggleNav(){ nav.dataset.open === '1' ? closeNav() : openNav(); }
+
+  btn.addEventListener('click', toggleNav);
+  nav.addEventListener('click', e => { if (e.target.closest('a')) closeNav(); });
+  document.addEventListener('click', e => {
+    if (nav.dataset.open && !nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.dataset.open) closeNav(); });
+
+  // Закривати при виході на десктоп (≥1024px)
+  function handleResize(){
+    if (window.matchMedia('(min-width: 1024px)').matches) closeNav();
+  }
+  window.addEventListener('resize', handleResize);
+
+  // Початковий стан
+  nav.style.maxHeight = '0px';
+  if (prefersReduce) nav.style.transition = 'none';
+})();
+</script>
+
 </body>
 </html>
 
