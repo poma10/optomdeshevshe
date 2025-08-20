@@ -155,11 +155,11 @@
       </p>
     </div>
 
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Перевага 1 -->
-      <div class="p-6 bg-indigo-50 rounded-2xl shadow-sm hover:shadow-md transition">
+    <!-- Один grid для всіх 6 карток -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+      <!-- 1 -->
+      <div class="p-6 bg-indigo-50 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col h-full">
         <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4">
-          <!-- Іконка -->
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3-1.343-3-3S10.343 2 12 2s3 1.343 3 3-1.343 3-3 3zM4 22s1-4 8-4 8 4 8 4" />
           </svg>
@@ -168,8 +168,8 @@
         <p class="mt-2 text-gray-600">Ми співпрацюємо лише з фабриками та надійними оптовими складами.</p>
       </div>
 
-      <!-- Перевага 2 -->
-      <div class="p-6 bg-indigo-50 rounded-2xl shadow-sm hover:shadow-md transition">
+      <!-- 2 -->
+      <div class="p-6 bg-indigo-50 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col h-full">
         <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6" />
@@ -179,8 +179,8 @@
         <p class="mt-2 text-gray-600">Можливість купувати навіть невеликими партіями, але за вигідною ціною.</p>
       </div>
 
-      <!-- Перевага 3 -->
-      <div class="p-6 bg-indigo-50 rounded-2xl shadow-sm hover:shadow-md transition">
+      <!-- 3 -->
+      <div class="p-6 bg-indigo-50 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col h-full">
         <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h13v6M9 11l3-3m0 0l3 3m-3-3v12" />
@@ -189,9 +189,43 @@
         <h3 class="text-lg font-semibold text-gray-900">Доставка під ключ</h3>
         <p class="mt-2 text-gray-600">Беремо на себе логістику, митне оформлення та перевірку якості товару.</p>
       </div>
+
+      <!-- 4 -->
+      <div class="p-6 bg-indigo-50 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col h-full">
+        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4m5-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900">Гарантія якості</h3>
+        <p class="mt-2 text-gray-600">Перевіряємо товари перед відправкою та надаємо документи від постачальників.</p>
+      </div>
+
+      <!-- 5 -->
+      <div class="p-6 bg-indigo-50 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col h-full">
+        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3-1.343-3-3S10.343 2 12 2s3 1.343 3 3-1.343 3-3 3zM4 22s1-4 8-4 8 4 8 4" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900">Персональний менеджер</h3>
+        <p class="mt-2 text-gray-600">Кожному клієнту допомагає особистий менеджер для швидких відповідей та консультацій.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="p-6 bg-indigo-50 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col h-full">
+        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h18M3 16h18" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900">Конфіденційність</h3>
+        <p class="mt-2 text-gray-600">Гарантуємо захист даних клієнтів та конфіденційність угод.</p>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- ПЕРЕВАГИ (адаптив + мобайл-френдлі) -->
 <section id="features" class="py-10 sm:py-16 lg:py-18 bg-gray-50">
