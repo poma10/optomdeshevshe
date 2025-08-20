@@ -252,7 +252,7 @@
           </span>
           <div>
             <div class="text-4xl font-extrabold text-indigo-700 leading-none">
-              <span class="counter" data-target="800" data-suffix="+"></span>
+              <span class="counter" data-target="800" data-suffix="+">0</span>
             </div>
             <div class="mt-1 text-gray-700 font-medium">Постійних клієнтів</div>
           </div>
@@ -351,11 +351,11 @@
             </svg>
           </span>
           <div>
-            <div class="text-4xl font-extrabold text-indigo-700 leading-none">24–72&nbsp;год</div>
+            <div class="text-4xl font-extrabold text-indigo-700 leading-none">1–2&nbsp;год</div>
             <div class="mt-1 text-gray-700 font-medium">Підбір пропозицій</div>
           </div>
         </div>
-        <p class="mt-4 text-gray-600">Базові варіанти надсилаємо вже в перші 1–3 дні після заявки.</p>
+        <p class="mt-4 text-gray-600">Базові варіанти надсилаємо вже в перші 1–3 години після заявки.</p>
       </div>
     </div>
   </div>
@@ -1213,98 +1213,35 @@
     (function(){const f=document.getElementById('botFab'); if(f && f.parentElement!==document.body){document.body.appendChild(f);} })();
   </script>
 <script>
-(function () {
-  const btn = document.getElementById('navToggle');
-  const nav = document.getElementById('mobileNav');
-  if (!btn || !nav) return;
+document.addEventListener("DOMContentLoaded", () => {
+  function animateCounter(el) {
+    const target = +el.dataset.target;
+    const duration = +el.dataset.duration || 2000;
+    const start = 0;
+    const startTime = performance.now();
 
-  const ICON_BURGER = 'M4 6h16M4 12h16M4 18h16';
-  const ICON_CLOSE  = 'M6 6l12 12M18 6l-12 12';
-  const svgPath = btn.querySelector('path');
-  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function openNav() {
-    btn.setAttribute('aria-expanded', 'true');
-    if (svgPath) svgPath.setAttribute('d', ICON_CLOSE);
-    nav.style.maxHeight = nav.scrollHeight + 'px';
-    document.body.style.overflow = 'hidden';
-    nav.dataset.open = '1';
-  }
-  function closeNav() {
-    btn.setAttribute('aria-expanded', 'false');
-    if (svgPath) svgPath.setAttribute('d', ICON_BURGER);
-    nav.style.maxHeight = '0px';
-    document.body.style.overflow = '';
-    delete nav.dataset.open;
-  }
-  function toggleNav(){ nav.dataset.open === '1' ? closeNav() : openNav(); }
-
-  btn.addEventListener('click', toggleNav);
-  nav.addEventListener('click', e => { if (e.target.closest('a')) closeNav(); });
-  document.addEventListener('click', e => {
-    if (nav.dataset.open && !nav.contains(e.target) && !btn.contains(e.target)) closeNav();
-  });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.dataset.open) closeNav(); });
-
-  // Закривати при виході на десктоп (≥1024px)
-  function handleResize(){
-    if (window.matchMedia('(min-width: 1024px)').matches) closeNav();
-  }
-  window.addEventListener('resize', handleResize);
-
-  // Початковий стан
-  nav.style.maxHeight = '0px';
-  if (prefersReduce) nav.style.transition = 'none';
-})();
-</script>
-<script>
-(function(){
-  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function format(n){
-    // тисячні розділювачі
-    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-  }
-
-  function animateCount(el){
-    const target = Number(el.dataset.target || 0);
-    const suffix = el.dataset.suffix || '';
-    const prefix = el.dataset.prefix || '';
-    const duration = Number(el.dataset.duration || 1200); // мс
-
-    if (prefersReduce || target === 0){
-      el.textContent = prefix + format(target) + suffix;
-      return;
+    function update(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const value = Math.floor(progress * (target - start) + start);
+      el.textContent = value.toLocaleString("uk-UA");
+      if (progress < 1) requestAnimationFrame(update);
     }
-
-    let start = null;
-    const startVal = 0;
-
-    function step(ts){
-      if (!start) start = ts;
-      const p = Math.min(1, (ts - start) / duration);
-      // easeOutCubic
-      const eased = 1 - Math.pow(1 - p, 3);
-      const val = Math.round(startVal + (target - startVal) * eased);
-      el.textContent = prefix + format(val) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
+    requestAnimationFrame(update);
   }
 
-  const observer = new IntersectionObserver((entries) => {
+  const counters = document.querySelectorAll(".counter");
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting){
-        animateCount(entry.target);
-        observer.unobserve(entry.target);
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        obs.unobserve(entry.target);
       }
     });
   }, { threshold: 0.5 });
 
-  document.querySelectorAll('.counter').forEach(el => observer.observe(el));
-})();
+  counters.forEach(c => observer.observe(c));
+});
 </script>
-
 </body>
 </html>
 
