@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="uk" data-tw-ready="0">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Політика конфіденційності — ТвійОПТ</title>
+  <meta name="description" content="Політика конфіденційності ТвійОПТ: які дані збираємо, як використовуємо, терміни зберігання, права користувачів і контакти." />
+
+  <!-- Anti-FOUC guard -->
+  <style>
+    html{scroll-behavior:smooth}
+    html[data-tw-ready="0"] body{opacity:0;visibility:hidden}
+    html[data-tw-ready="1"] body{opacity:1;visibility:visible;transition:opacity .15s ease}
+  </style>
+  <script>document.documentElement.dataset.twReady="0";</script>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <script src="https://cdn.tailwindcss.com" onload="document.documentElement.dataset.twReady='1'"></script>
+</head>
+
+<body class="bg-white text-gray-900 selection:bg-indigo-600/20">
+
+  <!-- NAV (desktop + mobile) -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html#top" class="flex items-center gap-3">
+          <img src="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416"
+               alt="ТвійОПТ" class="w-10 h-10 rounded-full object-cover border border-gray-300 shadow-sm">
+          <span class="leading-tight">
+            <span class="block font-extrabold text-xl tracking-tight">
+              <span class="text-black">Твій</span><span class="text-pink-600">ОПТ</span>
+            </span>
+            <span class="block text-xs text-gray-500">Знайди товар вигідніше</span>
+          </span>
+        </a>
+
+        <!-- Burger -->
+        <button id="navToggle" class="md:hidden inline-flex items-center justify-center w-10 h-10
+                rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-100"
+                aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobileNav">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <!-- Desktop menu -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="index.html" class="hover:text-indigo-600">Головна</a>
+          <a href="index.html#features" class="hover:text-indigo-600">Переваги</a>
+          <a href="index.html#how" class="hover:text-indigo-600">Як це працює</a>
+          <a href="index.html#countries" class="hover:text-indigo-600">Країни</a>
+          <a href="index.html#reviews" class="hover:text-indigo-600">Відгуки</a>
+          <a href="pro-nas.html" class="hover:text-indigo-600">Про нас</a>
+          <a href="umovy.html" class="hover:text-indigo-600">Умови Співпраці</a>
+          <a href="contacts.html" class="hover:text-indigo-600">Контакти</a>
+          <a href="index.html#contact"
+             class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500">
+            Спробувати
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobileNav"
+         class="md:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out">
+      <div class="px-4 pb-4 pt-2 space-y-1 border-t border-gray-200 bg-white">
+        <a href="index.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Головна</a>
+        <a href="index.html#features" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Переваги</a>
+        <a href="index.html#how" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Як це працює</a>
+        <a href="index.html#countries" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Країни</a>
+        <a href="index.html#reviews" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Відгуки</a>
+        <a href="pro-nas.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Про нас</a>
+        <a href="umovy.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Умови Співпраці</a>
+        <a href="contacts.html" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Контакти</a>
+        <a href="index.html#contact"
+           class="block text-center px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500">
+          Спробувати
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight text-gray-900">
+          Політика конфіденційності
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-gray-700 leading-relaxed">
+          Ми дбаємо про захист ваших персональних даних. На цій сторінці — які дані ми збираємо, 
+          як їх використовуємо та які у вас є права.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <!-- Вступ -->
+    <section class="grid lg:grid-cols-2 gap-8">
+      <article class="p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Хто ми</h2>
+        <p class="mt-3 text-gray-700">
+          ТвійОПТ — сервіс, що допомагає бізнесам купувати товари оптом вигідніше: підбір постачальників, 
+          перевірка якості, логістика «під ключ». Ця політика пояснює, як ми обробляємо ваші дані.
+        </p>
+      </article>
+
+      <article class="p-6 md:p-8 rounded-2xl border border-indigo-200 bg-indigo-50">
+        <h2 class="text-2xl font-bold">Обсяг дії</h2>
+        <p class="mt-3 text-gray-700">
+          Політика застосовується до сайту, Telegram-бота та комунікацій з нами (email/телефон).
+          Користуючись нашими сервісами, ви погоджуєтесь із цією політикою.
+        </p>
+      </article>
+    </section>
+
+    <!-- Які дані ми збираємо -->
+    <section class="mt-12 grid lg:grid-cols-2 gap-8">
+      <article class="p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Які дані ми збираємо</h2>
+        <ul class="mt-3 space-y-2 text-gray-700">
+          <li>• Контактні дані: ім’я, телефон, email, нік у Telegram.</li>
+          <li>• Деталі запиту: посилання/фото товару, бюджет, терміни, вимоги до брендингу.</li>
+          <li>• Технічні дані: IP, тип пристрою/браузера (для безпеки та статистики).</li>
+          <li>• Комунікації з нами: повідомлення, файли, рекламації.</li>
+        </ul>
+      </article>
+
+      <article class="p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Підстави обробки</h2>
+        <ul class="mt-3 space-y-2 text-gray-700">
+          <li>• Виконання договору/замовлення та попередні дії до нього.</li>
+          <li>• Законні інтереси (поліпшення сервісу, безпека, статистика).</li>
+          <li>• Згода (де це потрібно, наприклад, маркетингові розсилки).</li>
+          <li>• Виконання правових обов’язків (зберігання документів, податковий облік).</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Для чого використовуємо та зберігання -->
+    <section class="mt-12 grid lg:grid-cols-2 gap-8">
+      <article class="p-6 md:p-8 rounded-2xl border border-indigo-200 bg-indigo-50">
+        <h2 class="text-2xl font-bold">Для чого використовуємо</h2>
+        <ul class="mt-3 space-y-2 text-gray-700">
+          <li>• Підбір постачальників, підготовка пропозицій, оформлення замовлень.</li>
+          <li>• Комунікація та підтримка клієнтів (бот, email, телефон).</li>
+          <li>• Логістика, митні документи, трекінг відправлень.</li>
+          <li>• Аналітика сервісу, покращення процесів.</li>
+        </ul>
+      </article>
+
+      <article class="p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Зберігання даних</h2>
+        <p class="mt-3 text-gray-700">
+          Персональні дані зберігаються стільки, скільки потрібно для цілей, описаних вище, 
+          або згідно з вимогами закону (бухоблік/звітність). По завершенні терміну — дані видаляються або анонімізуються.
+        </p>
+      </article>
+    </section>
+
+    <!-- Передача третім сторонам та Telegram -->
+    <section class="mt-12 grid lg:grid-cols-2 gap-8">
+      <article class="p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Передача третім сторонам</h2>
+        <p class="mt-3 text-gray-700">
+          Дані можуть оброблятись нашими підрядниками (логістика, митні брокери, платіжні сервіси) 
+          виключно для виконання вашого замовлення та за умов конфіденційності. 
+          Не продаємо та не передаємо ваші дані третім сторонам у маркетингових цілях без вашої згоди.
+        </p>
+      </article>
+
+      <article class="p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Telegram та сторонні сервіси</h2>
+        <p class="mt-3 text-gray-700">
+          Якщо ви спілкуєтесь через Telegram, частина даних обробляється згідно з політикою Telegram. 
+          Також ми можемо використовувати інтеграції (наприклад, SendPulse, Shopify) — у таких випадках діють правила цих сервісів.
+        </p>
+      </article>
+    </section>
+
+    <!-- Cookies + Безпека -->
+    <section class="mt-12 grid lg:grid-cols-2 gap-8">
+      <article class="p-6 md:p-8 rounded-2xl border border-indigo-200 bg-indigo-50">
+        <h2 class="text-2xl font-bold">Cookies та аналітика</h2>
+        <p class="mt-3 text-gray-700">
+          Сайт може використовувати файли cookies для коректної роботи й статистики. 
+          Ви можете обмежити cookies у налаштуваннях браузера, але частина функцій може працювати некоректно.
+        </p>
+      </article>
+
+      <article class="p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Захист даних</h2>
+        <p class="mt-3 text-gray-700">
+          Впроваджуємо організаційні та технічні заходи захисту (обмеження доступу, шифрування каналів, аудит доступів). 
+          Водночас жоден інтернет-метод не гарантує 100% безпеки.
+        </p>
+      </article>
+    </section>
+
+    <!-- Ваші права + Контакти -->
+    <section class="mt-12 grid lg:grid-cols-2 gap-8">
+      <article class="p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Ваші права</h2>
+        <ul class="mt-3 space-y-2 text-gray-700">
+          <li>• Доступ до своїх даних та отримання копії.</li>
+          <li>• Виправлення неточних даних.</li>
+          <li>• Видалення («право бути забутим») — у межах законодавства.</li>
+          <li>• Обмеження або заперечення обробки.</li>
+          <li>• Перенесення даних.</li>
+          <li>• Відкликання згоди (для обробок на підставі згоди).</li>
+        </ul>
+      </article>
+
+      <article class="p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Контакти з питань даних</h2>
+        <p class="mt-3 text-gray-700">
+          Напишіть нам для доступу/виправлення/видалення даних:
+        </p>
+        <ul class="mt-2 text-gray-700">
+          <li>• Email: <a href="mailto:support@tvijopt.com" class="text-indigo-600 hover:underline">support@tvijopt.com</a></li>
+          <li>• Telegram-бот: <a href="https://t.me/tvijShoppingBot" target="_blank" class="text-indigo-600 hover:underline">@tvijShoppingBot</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Оновлення політики -->
+    <section class="mt-12">
+      <div class="p-6 md:p-8 rounded-3xl border border-gray-200 bg-white shadow-sm">
+        <h2 class="text-2xl font-bold">Оновлення цієї політики</h2>
+        <p class="mt-3 text-gray-700">
+          Ми можемо періодично оновлювати цю Політику конфіденційності. Актуальна версія завжди доступна на цій сторінці.
+          Зміни не впливають на вже погоджені/виконані замовлення без окремої згоди сторін.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (уніфікований) -->
+  <footer class="bg-gray-900 text-gray-300 pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-10">
+        <!-- Лого і короткий опис -->
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-2xl bg-gradient-to-br from-indigo-600 to-pink-600"></span>
+            <span class="text-lg font-bold text-white">ТвійОПТ</span>
+          </div>
+          <p class="mt-4 text-sm text-gray-400">
+            Шукаємо для вас вигідні пропозиції серед перевірених постачальників.
+          </p>
+        </div>
+        <!-- Навігація -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Навігація</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-white">Головна</a></li>
+            <li><a href="index.html#features" class="hover:text-white">Переваги</a></li>
+            <li><a href="index.html#how" class="hover:text-white">Як це працює</a></li>
+            <li><a href="index.html#countries" class="hover:text-white">Країни</a></li>
+            <li><a href="index.html#reviews" class="hover:text-white">Відгуки</a></li>
+            <li><a href="pro-nas.html" class="hover:text-white">Про нас</a></li>
+            <li><a href="umovy.html" class="hover:text-white">Умови співпраці</a></li>
+            <li><a href="contacts.html" class="hover:text-white">Контакти</a></li>
+          </ul>
+        </div>
+        <!-- Контакти -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Контакти</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Email: <a href="mailto:support@tvijopt.com" class="hover:text-white">support@tvijopt.com</a></li>
+            <li>Телефон: <a href="tel:+380000000000" class="hover:text-white">+38 (000) 000-00-00</a></li>
+            <li>Telegram: <a href="https://t.me/tvijShoppingBot" target="_blank" class="hover:text-white">@tvijShoppingBot</a></li>
+          </ul>
+        </div>
+        <!-- CTA -->
+        <div>
+          <h4 class="text-white font-semibold mb-4">Спробуйте бота</h4>
+          <a href="https://t.me/tvijShoppingBot" target="_blank"
+             class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500">
+            Відкрити Telegram-бот
+          </a>
+        </div>
+      </div>
+
+      <!-- Нижній ряд -->
+      <div class="mt-10 border-t border-gray-800 pt-6 text-sm text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>© <span id="y"></span> ТвійОПТ. Усі права захищені.</p>
+        <div class="flex gap-4">
+          <a href="policy.html" class="hover:text-white font-medium text-white">Політика конфіденційності</a>
+          <a href="umovy.html" class="hover:text-white">Умови співпраці</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script (burger + year) -->
+  <script>
+    (function () {
+      const btn = document.getElementById('navToggle');
+      const menu = document.getElementById('mobileNav');
+      if (btn && menu) {
+        const close = () => { menu.style.maxHeight = '0px'; btn.setAttribute('aria-expanded', 'false'); }
+        btn.addEventListener('click', () => {
+          const opened = menu.style.maxHeight && menu.style.maxHeight !== '0px';
+          menu.style.maxHeight = opened ? '0px' : menu.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', String(!opened));
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+        document.addEventListener('DOMContentLoaded', () => { menu.style.maxHeight = '0px'; });
+      }
+      const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
