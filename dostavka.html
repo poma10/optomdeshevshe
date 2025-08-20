@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="uk" data-tw-ready="0">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Умови співпраці — ТвійОПТ</title>
+  <meta name="description" content="Умови співпраці з ТвійОПТ: оплата, MOQ, контроль якості, логістика, митне оформлення, рекламації, конфіденційність." />
+
+  <!-- Anti-FOUC guard -->
+  <style>
+    html{scroll-behavior:smooth}
+    html[data-tw-ready="0"] body{opacity:0;visibility:hidden}
+    html[data-tw-ready="1"] body{opacity:1;visibility:visible;transition:opacity .15s ease}
+  </style>
+  <script>document.documentElement.dataset.twReady="0";</script>
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <script src="https://cdn.tailwindcss.com" onload="document.documentElement.dataset.twReady='1'"></script>
+</head>
+
+<body class="bg-white text-gray-900 selection:bg-indigo-600/20">
+
+<!-- NAV (desktop + mobile) -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="h-16 flex items-center justify-between">
+      <!-- Лого -->
+      <a href="index.html#top" class="flex items-center gap-3">
+        <img src="https://maioli.com.ua/cdn/shop/files/ChatGPT_Image_19_._2025_._11_09_32.png?v=1755592416"
+             alt="ТвійОПТ" class="w-10 h-10 rounded-full object-cover border border-gray-300 shadow-sm">
+        <span class="leading-tight">
+          <span class="block font-extrabold text-xl tracking-tight">
+            <span class="text-black">Твій</span><span class="text-pink-600">ОПТ</span>
+          </span>
+          <span class="block text-xs text-gray-500">Знайди товар вигідніше</span>
+        </span>
+      </a>
+
+      <!-- Бургер -->
+      <button id="navToggle" class="lg:hidden inline-flex items-center justify-center w-10 h-10
+              rounded-xl border border-gray-300 text-gray-700 hover:bg-gray-100"
+              aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobileNav">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Десктоп-меню -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm">
+        <a href="index.html"           class="hover:text-indigo-600">Головна</a>
+        <a href="pro-nas.html"         class="hover:text-indigo-600">Про нас</a>
+        <a href="umovy.html"           class="hover:text-indigo-600">Умови Співпраці</a>
+        <a href="dostavka.html"        class="hover:text-indigo-600">Доставка</a>
+        <a href="contacts.html"        class="hover:text-indigo-600">Контакти</a>
+        <a href="index.html#contact"
+           class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500">
+          Спробувати
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Мобільне меню -->
+  <nav id="mobileNav"
+       class="lg:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out">
+    <div class="px-4 pb-4 pt-2 space-y-1 border-t border-gray-200 bg-white">
+      <a href="index.html"           class="block px-3 py-2 rounded-lg hover:bg-gray-100">Головна</a>
+      <a href="pro-nas.html"         class="block px-3 py-2 rounded-lg hover:bg-gray-100">Про нас</a>
+      <a href="umovy.html"           class="block px-3 py-2 rounded-lg hover:bg-gray-100">Умови Співпраці</a>
+      <a href="dostavka.html"        class="block px-3 py-2 rounded-lg hover:bg-gray-100">Доставка</a>
+      <a href="contacts.html"        class="block px-3 py-2 rounded-lg hover:bg-gray-100">Контакти</a>
+      <a href="index.html#contact"
+         class="block text-center px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500">
+        Спробувати
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main>
+  <!-- HERO -->
+  <section class="pt-16 bg-gradient-to-b from-indigo-50 via-white to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Доставка з Китаю, Кореї, Японії та ЄС
+        </h1>
+        <p class="mt-4 text-lg text-gray-700">
+          Підберемо оптимальний маршрут: 
+          <span class="font-semibold text-indigo-600">авіа</span> для швидкості,
+          <span class="font-semibold text-indigo-600">морем</span> для великих партій, або
+          <span class="font-semibold text-indigo-600">поїздом</span> — баланс ціни та термінів.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ВИДИ ДОСТАВКИ -->
+<section id="delivery-modes" class="py-10 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-12 text-center">
+      Види доставки
+    </h2>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      
+      <!-- Авіа -->
+      <div class="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm 
+                  hover:shadow-lg hover:-translate-y-1 transition transform duration-300">
+        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4">
+          <!-- Іконка -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 6h.01M21 21l-6-6m0 0l-6-6-6 6 6 6z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900">Авіа-доставка</h3>
+        <p class="mt-2 text-gray-600 leading-relaxed">
+          5–12 днів. Найшвидший спосіб доставки, ідеальний для термінових замовлень, невеликих партій або цінних товарів. 
+          Оптимальний варіант, коли важливий кожен день.
+        </p>
+        <ul class="mt-3 list-disc list-inside text-gray-600 text-sm space-y-1">
+          <li>Пріоритетне митне оформлення</li>
+          <li>Відстеження та фото-інспекція</li>
+          <li>Мінімальні ризики пошкодження</li>
+        </ul>
+      </div>
+
+      <!-- Море -->
+      <div class="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm 
+                  hover:shadow-lg hover:-translate-y-1 transition transform duration-300">
+        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4">
+          <!-- Іконка -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19h18M3 12h18M3 5h18" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900">Морем</h3>
+        <p class="mt-2 text-gray-600 leading-relaxed">
+          30–45 днів. Найекономніший спосіб для великих партій та об’ємних вантажів. 
+          Підходить для регулярних замовлень з низькою терміновістю.
+        </p>
+        <ul class="mt-3 list-disc list-inside text-gray-600 text-sm space-y-1">
+          <li>FCL/LCL, страхування вантажу</li>
+          <li>Оптимізація упаковки під тариф</li>
+          <li>Найнижча ставка за кг/м³</li>
+        </ul>
+      </div>
+
+      <!-- Поїзд -->
+      <div class="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm 
+                  hover:shadow-lg hover:-translate-y-1 transition transform duration-300">
+        <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-600 text-white mb-4">
+          <!-- Іконка -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 17h16M4 12h16M4 7h16" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900">Поїздом</h3>
+        <p class="mt-2 text-gray-600 leading-relaxed">
+          12–20 днів. Баланс між швидкістю та вартістю. 
+          Найкраще підходить для середніх партій, коли авіа занадто дорого, а море занадто довго.
+        </p>
+        <ul class="mt-3 list-disc list-inside text-gray-600 text-sm space-y-1">
+          <li>Стабільний графік рейсів</li>
+          <li>Митне оформлення включено</li>
+          <li>Відстеження на маршруті</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ТЕРМІНИ ТА МАРШРУТИ (професійна версія без цін) -->
+<section id="routes" class="py-14 bg-indigo-50/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold mb-6">Терміни та маршрути доставки</h2>
+    <p class="text-gray-600 max-w-3xl">
+      Обираємо маршрут під задачу: швидкість, бюджет, габарити, вимоги до документів.
+      Нижче — орієнтовні терміни та рекомендації, коли який спосіб підходить найкраще.
+    </p>
+
+    <!-- Таблиця (md+) -->
+    <div class="mt-8 hidden md:block">
+      <div class="overflow-x-auto rounded-2xl bg-white shadow-sm ring-1 ring-gray-100">
+        <table class="min-w-full text-left text-sm">
+          <thead class="text-gray-600">
+            <tr>
+              <th class="py-4 pl-6 pr-6">Маршрут</th>
+              <th class="py-4 pr-6">Орієнтовний термін</th>
+              <th class="py-4 pr-6">Коли обирати</th>
+              <th class="py-4 pr-6">Що включаємо</th>
+              <th class="py-4 pr-6">Особливості</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <!-- Авіа -->
+            <tr class="align-top">
+              <td class="py-5 pl-6 pr-6">
+                <div class="font-semibold">Авіа (Китай / Азія → Україна/ЄС)</div>
+                <div class="text-xs text-indigo-600 font-medium mt-1 inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span> найшвидше
+                </div>
+              </td>
+              <td class="py-5 pr-6 whitespace-nowrap">≈ 5–12 днів</td>
+              <td class="py-5 pr-6">
+                Термінові поставки, зразки, невеликі партії, висока оборотність.
+              </td>
+              <td class="py-5 pr-6">
+                Інспекція з фото/відео, упаковка під переліт, папери для митниці, відстеження.
+              </td>
+              <td class="py-5 pr-6">
+                Пріоритет при митному оформленні, стабільний SLA по строках.
+              </td>
+            </tr>
+            <!-- Море -->
+            <tr class="align-top">
+              <td class="py-5 pl-6 pr-6">
+                <div class="font-semibold">Морем (FCL/LCL)</div>
+                <div class="text-xs text-indigo-600 font-medium mt-1 inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 rounded-full bg-sky-500"></span> великі обсяги
+                </div>
+              </td>
+              <td class="py-5 pr-6 whitespace-nowrap">≈ 30–45 днів</td>
+              <td class="py-5 pr-6">
+                Палети, великогабаритні вантажі, максимальна економія на тонно-кілометрі.
+              </td>
+              <td class="py-5 pr-6">
+                Консолідація (LCL) або контейнер (FCL), страхування, оптимізація пакування, брокерські послуги.
+              </td>
+              <td class="py-5 pr-6">
+                Краще планувати заздалегідь; мінімальна ставка за одиницю об’єму/ваги.
+              </td>
+            </tr>
+            <!-- Залізниця -->
+            <tr class="align-top">
+              <td class="py-5 pl-6 pr-6">
+                <div class="font-semibold">Залізниця (China Railway)</div>
+                <div class="text-xs text-indigo-600 font-medium mt-1 inline-flex items-center gap-2">
+                  <span class="inline-block h-2 w-2 rounded-full bg-violet-500"></span> баланс
+                </div>
+              </td>
+              <td class="py-5 pr-6 whitespace-nowrap">≈ 12–20 днів</td>
+              <td class="py-5 pr-6">
+                Середні партії, коли важливі і строк, і бюджет; стійкий графік рейсів.
+              </td>
+              <td class="py-5 pr-6">
+                Консолідація, транзитні документи, митниця «під ключ», довезення до складу/відділення.
+              </td>
+              <td class="py-5 pr-6">
+                Менше погодних ризиків; прозорий трекінг по етапах.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-gray-500">
+        * Терміни залежать від сезону, завантаженості ліній, характеристик вантажу та країни призначення.
+      </p>
+    </div>
+
+    <!-- Картки (мобільна версія) -->
+    <div class="mt-8 md:hidden space-y-4">
+      <!-- Авіа -->
+      <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+        <div class="flex items-start justify-between">
+          <h3 class="font-semibold">Авіа (Китай / Азія → Україна/ЄС)</h3>
+          <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">найшвидше</span>
+        </div>
+        <div class="mt-1 text-sm text-gray-600">Термін: <span class="font-medium text-gray-900">5–12 днів</span></div>
+        <ul class="mt-3 list-disc pl-5 text-sm text-gray-700 space-y-1">
+          <li>Термінові поставки, зразки, невеликі партії.</li>
+          <li>Інспекція, документи для митниці, відстеження.</li>
+          <li>Пріоритетне оформлення на митниці.</li>
+        </ul>
+      </article>
+      <!-- Море -->
+      <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+        <div class="flex items-start justify-between">
+          <h3 class="font-semibold">Морем (FCL/LCL)</h3>
+          <span class="text-[11px] px-2 py-0.5 rounded-full bg-sky-50 text-sky-700">великі обсяги</span>
+        </div>
+        <div class="mt-1 text-sm text-gray-600">Термін: <span class="font-medium text-gray-900">30–45 днів</span></div>
+        <ul class="mt-3 list-disc pl-5 text-sm text-gray-700 space-y-1">
+          <li>Палети, громіздкі вантажі, економія на одиницю.</li>
+          <li>Консолідація/контейнер, страхування, брокер.</li>
+          <li>Планування відвантажень заздалегідь.</li>
+        </ul>
+      </article>
+      <!-- Залізниця -->
+      <article class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-100">
+        <div class="flex items-start justify-between">
+          <h3 class="font-semibold">Залізниця (China Railway)</h3>
+          <span class="text-[11px] px-2 py-0.5 rounded-full bg-violet-50 text-violet-700">баланс</span>
+        </div>
+        <div class="mt-1 text-sm text-gray-600">Термін: <span class="font-medium text-gray-900">12–20 днів</span></div>
+        <ul class="mt-3 list-disc pl-5 text-sm text-gray-700 space-y-1">
+          <li>Середні партії; баланс швидкості і бюджету.</li>
+          <li>Консолідація, транзитні документи, митниця.</li>
+          <li>Стабільний графік, прозорий трекінг.</li>
+        </ul>
+      </article>
+
+      <p class="text-xs text-gray-500">
+        * Терміни можуть змінюватися залежно від сезону та характеристик вантажу.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ЯК ВІДБУВАЄТЬСЯ ДОСТАВКА -->
+<section id="delivery-process" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-gray-900 mb-10 text-center">
+      Як відбувається <span class="text-indigo-600">доставка</span>
+    </h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Крок 1 -->
+      <div class="p-6 rounded-2xl bg-indigo-50 hover:shadow-md transition">
+        <div class="text-2xl font-bold text-indigo-600 mb-3">1</div>
+        <h3 class="text-lg font-semibold text-gray-900">Запит та підбір</h3>
+        <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+          Ви надсилаєте фото або опис товару. Ми аналізуємо запит, перевіряємо доступні варіанти постачання,
+          прораховуємо оптимальні маршрути та готуємо кілька пропозицій з урахуванням ваших термінів і бюджету.
+        </p>
+      </div>
+
+      <!-- Крок 2 -->
+      <div class="p-6 rounded-2xl bg-indigo-50 hover:shadow-md transition">
+        <div class="text-2xl font-bold text-indigo-600 mb-3">2</div>
+        <h3 class="text-lg font-semibold text-gray-900">Інспекція та документи</h3>
+        <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+          Перед відправкою проводимо фото- та відеоінспекцію партії, звіряємо кількість і якість.
+          Оформлюємо рахунок, контракт, митні декларації, сертифікати відповідності чи походження (якщо потрібно).
+        </p>
+      </div>
+
+      <!-- Крок 3 -->
+      <div class="p-6 rounded-2xl bg-indigo-50 hover:shadow-md transition">
+        <div class="text-2xl font-bold text-indigo-600 mb-3">3</div>
+        <h3 class="text-lg font-semibold text-gray-900">Відправка вантажу</h3>
+        <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+          Обираємо оптимальний спосіб доставки — авіа, море чи залізниця.
+          Забезпечуємо страхування та відстеження на кожному етапі шляху.
+          Ви отримуєте регулярні звіти про рух вантажу до пункту призначення.
+        </p>
+      </div>
+
+      <!-- Крок 4 -->
+      <div class="p-6 rounded-2xl bg-indigo-50 hover:shadow-md transition">
+        <div class="text-2xl font-bold text-indigo-600 mb-3">4</div>
+        <h3 class="text-lg font-semibold text-gray-900">Митниця та доставка</h3>
+        <p class="mt-2 text-gray-600 text-sm leading-relaxed">
+          Проводимо митне оформлення «під ключ» та організовуємо фінальний етап:
+          довезення вантажу до складу, відділення перевізника або вашої адреси.
+          Забезпечуємо збереження та відповідність усім вимогам.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-indigo-50/60">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-extrabold mb-6 text-center">Поширені запитання</h2>
+        <div class="space-y-3">
+          <!-- item -->
+          <details class="group rounded-xl bg-white p-5 shadow-sm">
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-semibold">Чи допомагаєте з митним оформленням?</span>
+              <span class="ml-4 text-gray-400 group-open:rotate-180 transition">⌄</span>
+            </summary>
+            <p class="mt-3 text-gray-600">Так, оформлюємо «під ключ»: код УКТ ЗЕД, інвойс, пакувальний лист, брокерські послуги.</p>
+          </details>
+
+          <details class="group rounded-xl bg-white p-5 shadow-sm">
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-semibold">Можна змішувати різні товари в одній відправці?</span>
+              <span class="ml-4 text-gray-400 group-open:rotate-180 transition">⌄</span>
+            </summary>
+            <p class="mt-3 text-gray-600">Так, робимо консолідацію на складі та оптимізуємо упаковку під тариф.</p>
+          </details>
+
+          <details class="group rounded-xl bg-white p-5 shadow-sm">
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-semibold">Що з рекламаціями, якщо прийде брак?</span>
+              <span class="ml-4 text-gray-400 group-open:rotate-180 transition">⌄</span>
+            </summary>
+            <p class="mt-3 text-gray-600">Перед відправкою проводимо інспекцію; у разі браку — компенсація/допоставка за узгодженими правилами.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-3xl bg-indigo-600 text-white p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div>
+            <h3 class="text-2xl font-extrabold">Порадимо найкращий маршрут для вашого вантажу</h3>
+            <p class="mt-1 text-white/90">Надішліть фото або опис в Telegram — підберемо швидко і вигідно.</p>
+          </div>
+          <a href="https://t.me/tvijShoppingBot" target="_blank"
+             class="inline-flex items-center gap-2 rounded-2xl bg-white text-indigo-700 px-5 py-3 font-semibold hover:bg-white/90">
+            Відкрити Telegram-бот
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+  // ховати пункти, що тільки для головної
+  (function () {
+    var path = location.pathname;
+    var onHome = path.endsWith('/index.html') || path === '/' || /\/[^/]+\/?$/.test(path) && !path.includes('.html');
+    if (!onHome) document.querySelectorAll('[data-main-only]').forEach(el => el.remove());
+  })();
+
+  // бургер
+  (function(){
+    const btn = document.getElementById('navToggle');
+    const nav = document.getElementById('mobileNav');
+    if (!btn || !nav) return;
+    const ICON_BURGER = 'M4 6h16M4 12h16M4 18h16';
+    const ICON_CLOSE  = 'M6 6l12 12M18 6l-12 12';
+    const svgPath = btn.querySelector('path');
+
+    function openNav(){ btn.setAttribute('aria-expanded','true'); svgPath.setAttribute('d', ICON_CLOSE); nav.style.maxHeight = nav.scrollHeight+'px'; document.body.style.overflow='hidden'; }
+    function closeNav(){ btn.setAttribute('aria-expanded','false'); svgPath.setAttribute('d', ICON_BURGER); nav.style.maxHeight = '0px'; document.body.style.overflow=''; }
+    btn.addEventListener('click', () => nav.style.maxHeight==='0px' || !nav.style.maxHeight ? openNav() : closeNav());
+    nav.addEventListener('click', e => { if (e.target.closest('a')) closeNav(); });
+    window.addEventListener('resize', () => { if (matchMedia('(min-width:1024px)').matches) closeNav(); });
+  })();
+  </script>
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300 pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-10">
+      
+      <!-- Лого і короткий опис -->
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-2xl bg-gradient-to-br from-indigo-600 to-pink-600"></span>
+          <span class="text-lg font-bold text-white">ТвійОПТ</span>
+        </div>
+        <p class="mt-4 text-sm text-gray-400">
+          Шукаємо для вас вигідні пропозиції серед перевірених постачальників.
+        </p>
+      </div>
+
+      <!-- Навігація -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Навігація</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white">Головна</a></li>
+          <li><a href="pro-nas.html" class="hover:text-white">Про нас</a></li>
+          <li><a href="umovy.html" class="hover:text-white">Умови співпраці</a></li>
+          <li><a href="contacts.html" class="hover:text-white">Контакти</a></li>
+        </ul>
+      </div>
+
+      <!-- Контакти -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Контакти</h4>
+        <ul class="space-y-2 text-sm">
+          <li>Email: <a href="maioli.shop@gmail.com" class="hover:text-white">support@tvijopt.com</a></li>
+          <li>Телефон: <a href="tel:+380668049717" class="hover:text-white">+38 (000) 000-00-00</a></li>
+          <li>Telegram: <a href="https://t.me/tvijShoppingBot" target="_blank" class="hover:text-white">@tvijShoppingBot</a></li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Спробуйте бота</h4>
+        <a href="https://t.me/tvijShoppingBot" target="_blank"
+           class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500">
+          Відкрити Telegram-бот
+        </a>
+      </div>
+    </div>
+
+    <!-- Нижній ряд -->
+    <div class="mt-10 border-t border-gray-800 pt-6 text-sm text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="y"></span> ТвійОПТ. Усі права захищені.</p>
+      <div class="flex gap-4">
+        <a href="policy.html" class="hover:text-white">Політика конфіденційності</a>
+        <a href="umovy.html" class="hover:text-white">Умови співпраці</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Автоматично оновлює рік
+  const y = document.getElementById('y');
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+  <!-- Постійна Telegram-кнопка (FAB) -->
+  <style>
+    .bot-fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:2147483647}
+    .bot-fab__btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border-radius:9999px;background:#4f46e5;color:#fff;font:600 14px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;box-shadow:0 12px 25px rgba(79,70,229,.35);transition:.18s}
+    .bot-fab__btn:hover{transform:translateY(-2px);background:#6366f1;box-shadow:0 16px 32px rgba(79,70,229,.45)}
+    @media (max-width:640px){.bot-fab__label{display:none}.bot-fab__btn{padding:.75rem}}
+  </style>
+  <a id="botFab" href="https://t.me/tvijShoppingBot" target="_blank" class="bot-fab" aria-label="Спробувати Telegram-бота">
+    <span class="bot-fab__btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.9 15.6 9.8 19c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.8.4 1.3.2 1.5-.7l2.7-12c.3-1.1-.4-1.6-1.2-1.3L2.8 9.7c-1 .4-1 1 .2 1.3l4.9 1.5 11.4-7.2c.5-.3.9-.1.5.2l-9.9 10.1z"/></svg>
+      <span class="bot-fab__label">Спробувати бота</span>
+    </span>
+  </a>
+  <script>
+    (function(){const f=document.getElementById('botFab'); if(f && f.parentElement!==document.body){document.body.appendChild(f);} })();
+  </script>
+<script>
+(function () {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('mobileNav');
+  if (!btn || !nav) return;
+
+  const ICON_BURGER = 'M4 6h16M4 12h16M4 18h16';
+  const ICON_CLOSE  = 'M6 6l12 12M18 6l-12 12';
+  const svgPath = btn.querySelector('path');
+  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function openNav() {
+    btn.setAttribute('aria-expanded', 'true');
+    if (svgPath) svgPath.setAttribute('d', ICON_CLOSE);
+    nav.style.maxHeight = nav.scrollHeight + 'px';
+    document.body.style.overflow = 'hidden';
+    nav.dataset.open = '1';
+  }
+  function closeNav() {
+    btn.setAttribute('aria-expanded', 'false');
+    if (svgPath) svgPath.setAttribute('d', ICON_BURGER);
+    nav.style.maxHeight = '0px';
+    document.body.style.overflow = '';
+    delete nav.dataset.open;
+  }
+  function toggleNav(){ nav.dataset.open === '1' ? closeNav() : openNav(); }
+
+  btn.addEventListener('click', toggleNav);
+  nav.addEventListener('click', e => { if (e.target.closest('a')) closeNav(); });
+  document.addEventListener('click', e => {
+    if (nav.dataset.open && !nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.dataset.open) closeNav(); });
+
+  // Закривати при виході на десктоп (≥1024px)
+  function handleResize(){
+    if (window.matchMedia('(min-width: 1024px)').matches) closeNav();
+  }
+  window.addEventListener('resize', handleResize);
+
+  // Початковий стан
+  nav.style.maxHeight = '0px';
+  if (prefersReduce) nav.style.transition = 'none';
+})();
+</script>
+</body>
+</html>
+
