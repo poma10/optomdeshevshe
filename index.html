@@ -1395,5 +1395,17 @@ document.addEventListener("DOMContentLoaded", () => {
   counters.forEach(c => observer.observe(c));
 });
 </script>
+<!-- Відстеження кліків по кнопках/посиланнях Telegram-бота -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('a[href*="t.me/tvijShoppingBot"]').forEach(function(el) {
+    el.addEventListener("click", function() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17496443090/dX4OCLusi4sbENKR-pZB'
+      });
+    });
+  });
+});
+</script>
 </body>
 </html>
