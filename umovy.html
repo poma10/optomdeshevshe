@@ -11,13 +11,13 @@
 <meta property="og:url" content="https://kupuj-optom.online/umovy.html">
 
 
-  <!-- Optional (не впливає на ранжування, але не шкодить) -->
+  <!-- Optional -->
   <meta name="keywords" content="товари оптом, оптові продажі, оптові постачання, купити оптом, гуртові ціни, оптові закупівлі, логістика, митне оформлення, контроль якості">
 
   <!-- Favicon -->
-  <link rel="icon" href="https://kupuj-optom.online/preview.ico" type="image/x-icon">
+  <link rel="icon" href="https://kupuj-optom.online/preview.ico" type="image/x-icon" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
   <link rel="shortcut icon" href="https://kupuj-optom.online/preview.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="https://kupuj-optom.online/preview.png">
+  <link rel="apple-touch-icon" href="https://kupuj-optom.online/preview.png" sizes="180x180">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="uk_UA">
@@ -35,37 +35,40 @@
   <meta name="twitter:description" content="Оптові продажі та постачання: оптові ціни, відбір постачальників, контроль якості, логістика й доставка.">
   <meta name="twitter:image" content="https://kupuj-optom.online/preview.png">
 
-  <!-- Structured Data (Organization + WebSite) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "ТвійОПТ",
-    "url": "https://kupuj-optom.online/",
-    "logo": "https://kupuj-optom.online/preview.png",
-    "sameAs": ["https://t.me/tvijShoppingBot"],
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "sales",
-      "areaServed": "UA",
-      "availableLanguage": ["uk"],
-      "email": "maioli.shop@gmail.com"
-    }]
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"ТвійОПТ",
+    "url":"https://kupuj-optom.online/",
+    "logo":"https://kupuj-optom.online/preview.png",
+    "sameAs":["https://t.me/tvijShoppingBot"],
+    "contactPoint":[{"@type":"ContactPoint","contactType":"sales","areaServed":"UA","availableLanguage":["uk"],"email":"maioli.shop@gmail.com"}]
   }
   </script>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://kupuj-optom.online/",
-    "name": "ТвійОПТ",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://kupuj-optom.online/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://kupuj-optom.online/",
+    "name":"ТвійОПТ",
+    "potentialAction":{"@type":"SearchAction","target":"https://kupuj-optom.online/?q={search_term_string}","query-input":"required name=search_term_string"}
   }
   </script>
+
+  <!-- Anti-FOUC (щоб не блимало при підвантаженні стилів) -->
+  <style>
+    html{scroll-behavior:smooth}
+    html[data-tw-ready="0"] body{opacity:0;visibility:hidden}
+    html[data-tw-ready="1"] body{opacity:1;visibility:visible;transition:opacity .15s ease}
+  </style>
+  <script>document.documentElement.dataset.twReady="0";</script>
+
+  <!-- Tailwind (або підключи свій CSS) -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <script src="https://cdn.tailwindcss.com" onload="document.documentElement.dataset.twReady='1'"></script>
 </head>
 
 <body class="bg-white text-gray-900 selection:bg-indigo-600/20">
