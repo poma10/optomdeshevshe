@@ -393,20 +393,66 @@
   if (y) y.textContent = new Date().getFullYear();
 </script>
 
-  <!-- Постійна Telegram-кнопка (FAB) -->
-  <style>
-    .bot-fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:2147483647}
-    .bot-fab__btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border-radius:9999px;background:#4f46e5;color:#fff;font:600 14px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;box-shadow:0 12px 25px rgba(79,70,229,.35);transition:.18s}
-    .bot-fab__btn:hover{transform:translateY(-2px);background:#6366f1;box-shadow:0 16px 32px rgba(79,70,229,.45)}
-    @media (max-width:640px){.bot-fab__label{display:none}.bot-fab__btn{padding:.75rem}}
-  </style>
-  <a id="botFab" href="https://t.me/tvijShoppingBot" target="_blank" class="bot-fab" aria-label="Спробувати Telegram-бота">
-    <span class="bot-fab__btn">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.9 15.6 9.8 19c.4 0 .6-.2.8-.4l2-1.9 4.1 3c.8.4 1.3.2 1.5-.7l2.7-12c.3-1.1-.4-1.6-1.2-1.3L2.8 9.7c-1 .4-1 1 .2 1.3l4.9 1.5 11.4-7.2c.5-.3.9-.1.5.2l-9.9 10.1z"/></svg>
-      <span class="bot-fab__label">Спробувати бота</span>
-    </span>
-  </a>
-  <script>
+<!-- Віджет "Отримай" -->
+<style>
+  .fab-container{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:9999;
+  }
+  .fab-main{
+    background:#4f46e5;
+    color:#fff;
+    padding:14px 20px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    transition:.25s;
+  }
+  .fab-main:hover{background:#6366f1;transform:translateY(-2px);}
+  .fab-options{
+    display:none;
+    margin-top:10px;
+  }
+  .fab-options button{
+    display:block;
+    width:100%;
+    margin:5px 0;
+    padding:12px 16px;
+    border:none;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+    color:#fff;
+    box-shadow:0 5px 12px rgba(0,0,0,.2);
+    transition:.2s;
+  }
+  .fab-options button:hover{transform:translateX(3px);}
+  .telegram{background:#0088cc;}
+  .viber{background:#7360f2;}
+  .messenger{background:#006AFF;}
+</style>
+
+<div class="fab-container">
+  <button class="fab-main" onclick="toggleFab()">🔥 Отримай кращу оптову ціну</button>
+  <div class="fab-options" id="fabOptions">
+    <button class="telegram" onclick="window.open('https://t.me/admira1012','_blank')">🚀 Написати в Telegram</button>
+    <button class="viber" onclick="window.open('viber://chat?number=%2B380970804428','_blank')">💬 Написати у Viber</button>
+    <button class="messenger" onclick="window.open('https://m.me/yourpage','_blank')">📩 Написати у Messenger</button>
+  </div>
+</div>
+
+<script>
+  function toggleFab(){
+    const fab = document.getElementById("fabOptions");
+    fab.style.display = fab.style.display === "block" ? "none" : "block";
+  }
+</script>  <script>
     (function(){const f=document.getElementById('botFab'); if(f && f.parentElement!==document.body){document.body.appendChild(f);} })();
   </script>
 <script>
