@@ -492,10 +492,10 @@
   })();
   </script>
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 pt-14 pb-8">
+<footer class="bg-gray-900 text-gray-300 pt-14 pb-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
     <div class="grid md:grid-cols-4 gap-10">
-      
       <!-- Лого і короткий опис -->
       <div>
         <div class="flex items-center gap-3">
@@ -522,38 +522,52 @@
       <div>
         <h4 class="text-white font-semibold mb-4">Контакти</h4>
         <ul class="space-y-2 text-sm">
-          <li>Email: <a href="maioli.shop@gmail.com" class="hover:text-white">maioli.shop@gmail.com</a></li>
+          <li>Email: <a href="mailto:maioli.shop@gmail.com" class="hover:text-white">maioli.shop@gmail.com</a></li>
           <li>Телефон: <a href="tel:+380668049717" class="hover:text-white">+38 (066) 804-47-17</a></li>
-          <li>Telegram: <a href="https://t.me/tvijShoppingBot" target="_blank" class="hover:text-white">@tvijShoppingBot</a></li>
+          <li>Telegram: <a href="https://t.me/admira1012" target="_blank" rel="noopener" class="hover:text-white">https://t.me/admira1012</a></li>
         </ul>
       </div>
 
       <!-- CTA -->
       <div>
-        <h4 class="text-white font-semibold mb-4">Спробуйте бота</h4>
-        <a href="https://t.me/tvijShoppingBot" target="_blank"
-           class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500">
-          Відкрити Telegram-бот
-        </a>
+        <h4 class="text-white font-semibold mb-4">Спробуйте</h4>
+        <div class="flex flex-col gap-3">
+          <!-- Telegram -->
+          <a href="https://t.me/admira1012" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500 transition">
+            📩 Написати Telegram
+          </a>
+          <!-- Viber -->
+          <a href="viber://chat?number=%2B380970804428" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#7360F2] text-white font-semibold shadow hover:opacity-90 transition">
+            💬 Написати у Viber
+          </a>
+        </div>
       </div>
     </div>
 
     <!-- Нижній ряд -->
-    <div class="mt-10 border-t border-gray-800 pt-6 text-sm text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© <span id="y"></span> ТвійОПТ. Усі права захищені.</p>
-      <div class="flex gap-4">
+    <div class="mt-10 border-t border-gray-800 pt-6 text-sm text-gray-500 flex flex-col sm:flex-row sm:justify-between items-center gap-3">
+      <!-- Ліворуч: посилання -->
+      <div class="flex gap-4 order-2 sm:order-1">
         <a href="policy.html" class="hover:text-white">Політика конфіденційності</a>
         <a href="umovy.html" class="hover:text-white">Умови співпраці</a>
       </div>
+
+      <!-- По центру: копірайт -->
+      <p class="text-center flex-1 order-1 sm:order-2">
+        © <span id="y"></span> ТвійОПТ. Усі права захищені.
+      </p>
     </div>
   </div>
 </footer>
 
 <script>
-  // Автоматично оновлює рік
+  // Автоматично підставляє поточний рік у копірайт
   const y = document.getElementById('y');
   if (y) y.textContent = new Date().getFullYear();
 </script>
+
   <!-- Постійна Telegram-кнопка (FAB) -->
   <style>
     .bot-fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:2147483647}
