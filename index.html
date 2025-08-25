@@ -1044,7 +1044,7 @@
                 class="faq-btn w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
                 aria-expanded="false">
           <span class="text-base sm:text-lg font-semibold text-gray-900">
-            Як працює Telegram-бот?
+            Як це працює?
           </span>
           <svg class="faq-icon w-5 h-5 text-gray-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M6 9l6 6 6-6"/>
@@ -1052,8 +1052,7 @@
         </button>
         <div class="faq-panel px-5 pb-5 pt-0 hidden">
           <p class="text-gray-700">
-            Ви надсилаєте <span class="font-semibold">фото</span> товару або короткий <span class="font-semibold">опис</span> у боті
-            <a class="text-indigo-600 hover:underline" href="https://t.me/tvijShoppingBot" target="_blank">@tvijShoppingBot</a>.
+            Ви надсилаєте <span class="font-semibold">фото</span> товару або короткий <span class="font-semibold">опис</span> нам.
             Ми підбираємо найкращі пропозиції від перевірених постачальників і надсилаємо варіанти з ціною та строками.
           </p>
         </div>
@@ -1150,13 +1149,7 @@
     </div>
 
     <!-- CTA під FAQ -->
-    <div class="text-center mt-10">
-      <a href="https://t.me/tvijShoppingBot" target="_blank"
-         class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-500
-                text-white font-semibold shadow-lg transition">
-        Відкрити Telegram-бот
-      </a>
-    </div>
+
   </div>
 
   <!-- JS: акордеон з автозгортанням -->
@@ -1223,87 +1216,118 @@
     </script>
   </section>
 
-  <!-- ЛІД-ФОРМА -->
-  <section id="contact" class="py-10 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10 items-start">
-        <div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold">Залишіть запит — підберемо найкращу пропозицію</h2>
-          <p class="mt-4 text-lg text-gray-700">Опишіть товар чи додайте артикул. Знайдемо варіанти з документами та гарантією.</p>
-          <div class="mt-6 flex flex-wrap gap-3 text-sm">
-            <span class="px-3 py-1 rounded-xl bg-white border border-gray-200 shadow-sm">Відповідь ≈ 7 хв</span>
-            <span class="px-3 py-1 rounded-xl bg-white border border-gray-200 shadow-sm">Доставка 3–7 днів</span>
-            <span class="px-3 py-1 rounded-xl bg-white border border-gray-200 shadow-sm">Офіційні документи</span>
-          </div>
-        </div>
-
-        <div class="bg-white rounded-2xl border border-gray-200 shadow p-6 lg:p-8">
-          <form id="leadForm" class="space-y-6" autocomplete="on">
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div class="relative">
-                <input id="company" name="company" placeholder="ТОВ «ОптМаркет»"
-                       class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 placeholder-transparent focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none"/>
-                <label for="company" class="absolute left-3 top-3 px-1 bg-white text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-indigo-600">Компанія</label>
-              </div>
-              <div class="relative">
-                <input id="name" name="name" required placeholder="Олександр"
-                       class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 placeholder-transparent focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none"/>
-                <label for="name" class="absolute left-3 top-3 px-1 bg-white text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-indigo-600">Ім’я*</label>
-              </div>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div class="relative">
-                <input id="contactField" name="contact" required placeholder="+380… або email"
-                       class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 placeholder-transparent focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none"/>
-                <label for="contactField" class="absolute left-3 top-3 px-1 bg-white text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-indigo-600">Телефон або Email*</label>
-              </div>
-              <div class="relative">
-                <select id="category" name="category"
-                        class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none">
-                  <option value="">— Обрати —</option>
-                  <option>Одяг</option><option>Взуття</option><option>Аксесуари</option>
-                  <option>Товари для дому</option><option>Електроніка</option><option>Інше</option>
-                </select>
-                <label for="category" class="absolute -top-2 left-3 px-1 text-xs text-indigo-600 bg-white">Категорія</label>
-              </div>
-            </div>
-
-            <div class="relative">
-              <textarea id="message" name="message" rows="5" required placeholder="Фото/посилання/артикул, кількість, бажана ціна, терміни…"
-                        class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 placeholder-transparent focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none"></textarea>
-              <label for="message" class="absolute left-3 top-3 px-1 bg-white text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-indigo-600">Опишіть, що потрібно*</label>
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-              <button type="submit" class="px-7 py-3 rounded-2xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500">Надіслати запит</button>
-              <a href="https://t.me/tvijShoppingBot" target="_blank" class="text-indigo-600 hover:underline">або відкрити @tvijShoppingBot</a>
-            </div>
-
-            <div id="leadToast" class="hidden mt-3 text-sm rounded-xl px-4 py-3 bg-emerald-50 text-emerald-700 border border-emerald-200">
-              Запит скопійовано. Відкриваємо Telegram-бот — вставте та надішліть.
-            </div>
-          </form>
+<!-- ЛІД-ФОРМА -->
+<section id="contact" class="py-10 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Залишіть запит — підберемо найкращу пропозицію</h2>
+        <p class="mt-4 text-lg text-gray-700">Опишіть товар чи додайте артикул. Знайдемо варіанти з документами та гарантією.</p>
+        <div class="mt-6 flex flex-wrap gap-3 text-sm">
+          <span class="px-3 py-1 rounded-xl bg-white border border-gray-200 shadow-sm">Відповідь ≈ 7 хв</span>
+          <span class="px-3 py-1 rounded-xl bg-white border border-gray-200 shadow-sm">Доставка 3–7 днів</span>
+          <span class="px-3 py-1 rounded-xl bg-white border border-gray-200 shadow-sm">Офіційні документи</span>
         </div>
       </div>
+
+      <div class="bg-white rounded-2xl border border-gray-200 shadow p-6 lg:p-8">
+        <form id="leadForm" class="space-y-6" autocomplete="on">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="relative">
+              <input id="company" name="company" placeholder="ТОВ «ОптМаркет»"
+                     class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 placeholder-transparent focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none"/>
+              <label for="company" class="absolute left-3 top-3 px-1 bg-white text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-indigo-600">Компанія</label>
+            </div>
+            <div class="relative">
+              <input id="name" name="name" required placeholder="Олександр"
+                     class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 placeholder-transparent focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none"/>
+              <label for="name" class="absolute left-3 top-3 px-1 bg-white text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-indigo-600">Ім’я*</label>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="relative">
+              <input id="contactField" name="contact" required placeholder="+380… або email"
+                     class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 placeholder-transparent focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none"/>
+              <label for="contactField" class="absolute left-3 top-3 px-1 bg-white text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-indigo-600">Телефон або Email*</label>
+            </div>
+            <div class="relative">
+              <select id="category" name="category"
+                      class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none">
+                <option value="">— Обрати —</option>
+                <option>Одяг</option><option>Взуття</option><option>Аксесуари</option>
+                <option>Товари для дому</option><option>Електроніка</option><option>Інше</option>
+              </select>
+              <label for="category" class="absolute -top-2 left-3 px-1 text-xs text-indigo-600 bg-white">Категорія</label>
+            </div>
+          </div>
+
+          <div class="relative">
+            <textarea id="message" name="message" rows="5" required placeholder="Фото/посилання/артикул, кількість, бажана ціна, терміни…"
+                      class="peer w-full px-4 py-3 rounded-xl border-2 border-gray-300 placeholder-transparent focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 outline-none"></textarea>
+            <label for="message" class="absolute left-3 top-3 px-1 bg-white text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-xs peer-focus:text-indigo-600">Опишіть, що потрібно*</label>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+            <button type="submit" class="px-7 py-3 rounded-2xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500">Надіслати запит</button>
+            
+          </div>
+
+          <!-- ТОСТ З КНОПКАМИ ВИБОРУ -->
+          <div id="leadToast" class="hidden mt-4 rounded-2xl border border-gray-200 bg-white p-5 shadow">
+            <p class="text-gray-800 font-medium">Запит скопійовано ✅ Оберіть, куди надіслати:</p>
+            <div class="mt-3 flex flex-wrap gap-3">
+              <!-- Заміни посилання на свої -->
+              <a id="toTelegram"  href="Telegram-бот" target="_blank"
+                 class="px-4 py-2 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-500">Telegram</a>
+
+              <!-- Viber: або номер (viber://chat?number=%2B380970804428), або публічний акаунт -->
+              <a id="toViber"     href="viber://chat?number=%2B380970804428"
+                 class="px-4 py-2 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-500">Viber</a>
+
+              <!-- Messenger: впиши свій username/ID сторінки -->
+              <a id="toMessenger" href="https://m.me/yourpage"
+                 class="px-4 py-2 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-500">Messenger</a>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">Повідомлення вже в буфері — просто вставте (Ctrl/⌘+V) у вибраному чаті.</p>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 
-    <script>
-      (function(){
-        const FORMSPREE_ENDPOINT = ""; // додайте свій endpoint за потреби
-        const form  = document.getElementById('leadForm');
-        const toast = document.getElementById('leadToast');
-        form?.addEventListener('submit', async (e)=>{
-          e.preventDefault();
-          const fd = new FormData(form);
-          const company = (fd.get('company')||'').toString().trim();
-          const name    = (fd.get('name')||'').toString().trim();
-          const contact = (fd.get('contact')||'').toString().trim();
-          const category= (fd.get('category')||'').toString().trim();
-          const message = (fd.get('message')||'').toString().trim();
-          if(!name || !contact || !message){ alert('Заповніть обов’язкові поля.'); return; }
+  <script>
+    (function(){
+      // Можеш відразу прописати свої URL тут:
+      const TELEGRAM_URL  = 'https://t.me/admira1012';
+      const VIBER_URL     = 'viber://chat?number=%2B380970804428'; // заміни на свій номер/чат
+      const MESSENGER_URL = 'https://m.me/yourpage';              // заміни на свою сторінку
 
-          const text =
+      const FORMSPREE_ENDPOINT = ""; // якщо використовуєш — додай
+
+      const form  = document.getElementById('leadForm');
+      const toast = document.getElementById('leadToast');
+
+      // продублюємо посилання в кнопки (щоб було в одному місці)
+      document.getElementById('toTelegram').href  = TELEGRAM_URL;
+      document.getElementById('toViber').href     = VIBER_URL;
+      document.getElementById('toMessenger').href = MESSENGER_URL;
+
+      form?.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const fd = new FormData(form);
+        const company = (fd.get('company')||'').toString().trim();
+        const name    = (fd.get('name')||'').toString().trim();
+        const contact = (fd.get('contact')||'').toString().trim();
+        const category= (fd.get('category')||'').toString().trim();
+        const message = (fd.get('message')||'').toString().trim();
+
+        if(!name || !contact || !message){
+          alert('Заповніть обов’язкові поля.'); 
+          return;
+        }
+
+        const text =
 `Запит з сайту:
 Компанія: ${company||'—'}
 Ім’я: ${name}
@@ -1311,17 +1335,30 @@
 Категорія: ${category||'—'}
 Опис: ${message}`;
 
-          if (FORMSPREE_ENDPOINT){
-            try{ await fetch(FORMSPREE_ENDPOINT,{method:'POST',body:fd,headers:{Accept:'application/json'}}); } catch(e){}
-          }
-          try{ await navigator.clipboard.writeText(text); }catch(_){}
-          toast?.classList.remove('hidden');
-          window.open('https://t.me/tvijShoppingBot','_blank','noopener');
-          form.reset();
-        });
-      })();
-    </script>
-  </section>
+        // (необов’язково) надсилаємо на Formspree
+        if (FORMSPREE_ENDPOINT){
+          try{
+            await fetch(FORMSPREE_ENDPOINT, {
+              method:'POST', body:fd, headers:{Accept:'application/json'}
+            });
+          } catch(e){}
+        }
+
+        // копіюємо у буфер
+        try{ await navigator.clipboard.writeText(text); }catch(_){}
+
+        // показуємо меню вибору каналу
+        toast?.classList.remove('hidden');
+
+        // скролимо до повідомлення
+        toast?.scrollIntoView({behavior:'smooth', block:'start'});
+
+        // очищаємо форму
+        form.reset();
+      });
+    })();
+  </script>
+</section>
 
 <!-- FOOTER -->
 <footer class="bg-gray-900 text-gray-300 pt-14 pb-8">
@@ -1356,19 +1393,26 @@
         <ul class="space-y-2 text-sm">
           <li>Email: <a href="maioli.shop@gmail.com" class="hover:text-white">maioli.shop@gmail.com</a></li>
           <li>Телефон: <a href="tel:+380668049717" class="hover:text-white">+38 (066) 804-47-17</a></li>
-          <li>Telegram: <a href="https://t.me/tvijShoppingBot" target="_blank" class="hover:text-white">@tvijShoppingBot</a></li>
+          <li>Telegram: <a href="https://t.me/admira1012" target="_blank" class="hover:text-white">https://t.me/admira1012</a></li>
         </ul>
       </div>
 
-      <!-- CTA -->
-      <div>
-        <h4 class="text-white font-semibold mb-4">Спробуйте бота</h4>
-        <a href="https://t.me/tvijShoppingBot" target="_blank"
-           class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500">
-          Відкрити Telegram-бот
-        </a>
-      </div>
-    </div>
+<!-- CTA -->
+<div>
+  <h4 class="text-white font-semibold mb-4">Спробуйте</h4>
+  <div class="flex flex-col gap-3">
+    <!-- Telegram -->
+    <a href="https://t.me/admira1012" target="_blank"
+       class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500 transition">
+      📩 Написати Telegram
+    </a>
+    <!-- Viber -->
+    <a href="viber://chat?number=%2B380970804428" target="_blank"
+       class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#7360F2] text-white font-semibold shadow hover:opacity-90 transition">
+      💬 Написати у Viber
+    </a>
+  </div>
+</div>
 
     <!-- Нижній ряд -->
     <div class="mt-10 border-t border-gray-800 pt-6 text-sm text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
