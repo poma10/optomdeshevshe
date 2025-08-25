@@ -281,19 +281,57 @@
       </article>
     </section>
 
-    <!-- CTA -->
-    <section class="mt-12">
-      <div class="p-6 md:p-8 rounded-3xl border border-indigo-200 bg-gradient-to-r from-indigo-50 to-white flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <div>
-          <h3 class="text-xl md:text-2xl font-bold">Готові почати?</h3>
-          <p class="mt-2 text-gray-700">Надішліть фото або назву товару — підберемо кращі ціни та умови вже сьогодні.</p>
-        </div>
-        <div class="flex gap-3">
-          <a href="https://t.me/tvijShoppingBot" target="_blank" class="px-5 py-3 rounded-2xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500">Відкрити Telegram-бот</a>
-          <a href="index.html#contact" class="px-5 py-3 rounded-2xl border border-gray-300 text-gray-700 hover:bg-gray-100">Зв’язатися</a>
-        </div>
+   <!-- CTA -->
+<section class="mt-12">
+  <div class="p-6 md:p-8 rounded-3xl border border-indigo-200 bg-gradient-to-r from-indigo-50 to-white flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div>
+      <h3 class="text-xl md:text-2xl font-bold">Готові почати?</h3>
+      <p class="mt-2 text-gray-700">
+        Надішліть фото або назву товару — підберемо кращі ціни та умови вже сьогодні.
+      </p>
+    </div>
+
+    <!-- Кнопка з випадаючим меню -->
+    <div class="relative inline-block text-left">
+      <button id="ctaDropdownBtn"
+              class="px-6 py-3 rounded-2xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500 flex items-center justify-between gap-2">
+        📩 Написати нам
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+      <div id="ctaDropdownMenu"
+           class="hidden absolute right-0 mt-2 w-56 rounded-xl bg-white border border-gray-200 shadow-lg overflow-hidden z-20">
+        <a href="https://t.me/admira1012" target="_blank" 
+           class="block px-5 py-3 text-sm text-gray-700 hover:bg-indigo-50">✈️ Telegram</a>
+        <a href="viber://chat?number=%2B380970804428" target="_blank" 
+           class="block px-5 py-3 text-sm text-gray-700 hover:bg-indigo-50">💬 Viber</a>
+        <a href="https://m.me/yourpage" target="_blank" 
+           class="block px-5 py-3 text-sm text-gray-700 hover:bg-indigo-50">📩 Messenger</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("ctaDropdownBtn");
+    const menu = document.getElementById("ctaDropdownMenu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+
+    // Закриває меню, якщо клік поза ним
+    document.addEventListener("click", (e) => {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add("hidden");
+      }
+    });
+  });
+</script>
+
   </main>
 
   <!-- Скрипт меню -->
