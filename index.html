@@ -144,35 +144,117 @@
 
 <main>
 
-  <!-- HERO -->
-  <section id="top" class="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white pt-16">
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-white pt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18 lg:py-24">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="font-extrabold leading-tight tracking-tight text-[clamp(28px,6.5vw,56px)]">
+        Знаходь <span class="text-indigo-600">товари оптом</span> за найкращими цінами
+      </h1>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18 lg:py-24">
-        <div class="max-w-4xl mx-auto text-center">
-          <h1 class="font-extrabold leading-tight tracking-tight
-                     text-[clamp(28px,6.5vw,56px)]">
-            Знаходь <span class="text-indigo-600">товари оптом</span> за найкращими цінами
-          </h1>
+      <p class="mt-4 sm:mt-6 text-[clamp(15px,3.8vw,20px)] text-gray-700">
+        Надішліть <span class="font-semibold text-indigo-600">фото</span> або короткий 
+        <span class="font-semibold text-emerald-600">опис</span> — ми підберемо 
+        <span class="font-semibold">якісні пропозиції з найнижчою ціною</span> від перевірених постачальників.
+      </p>
 
-          <p class="mt-4 sm:mt-6 text-[clamp(15px,3.8vw,20px)] text-gray-700">
-            Надішліть <span class="font-semibold text-indigo-600">фото</span> або короткий
-            <span class="font-semibold text-emerald-600">опис</span> у Telegram-бот — ми підберемо
-            <span class="font-semibold">якісні пропозиції з найнижчою ціною</span> від перевірених постачальників.
-          </p>
-
-          <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
-            <a href="https://t.me/tvijShoppingBot" target="_blank"
-               class="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-2xl bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-500 text-[15px] sm:text-base">
-              Відкрити Telegram-бот
-            </a>
-            <a href="#features"
-               class="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-2xl border border-gray-300 text-gray-700 hover:bg-gray-100 text-[15px] sm:text-base">
-              Дізнатись більше
-            </a>
-          </div>
-        </div>
+      <!-- довіра / швидка відповідь -->
+      <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-2 text-indigo-700 text-sm">
+        <span>⏱ Відповідаємо за 3–10 хв</span>
+        <span class="mx-2 h-1 w-1 rounded-full bg-indigo-300"></span>
+        <span>✅ 150+ перевірених постачальників</span>
       </div>
-    </section>
+
+      <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+        <!-- ГОЛОВНА CTA: відкриває модальне вікно -->
+        <button
+          type="button"
+          id="openQuoteModal"
+          class="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-2xl bg-indigo-600 text-white font-semibold shadow-lg hover:bg-indigo-500 text-[15px] sm:text-base">
+          Отримати супер пропозицію
+        </button>
+
+        <!-- друге м'яке СТА — скрол до переваг -->
+        <a href="#features"
+           class="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-2xl border border-gray-300 text-gray-700 hover:bg-gray-100 text-[15px] sm:text-base">
+          Дізнатись більше
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="quoteModal" class="fixed inset-0 z-[60] hidden items-center justify-center">
+    <!-- backdrop -->
+    <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+
+    <!-- card -->
+    <div
+      class="relative mx-4 w-full max-w-md rounded-2xl bg-white p-6 shadow-xl sm:p-7">
+      <button type="button" id="closeQuoteModal"
+              class="absolute right-3 top-3 rounded-full p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-700"
+              aria-label="Закрити">
+        ✕
+      </button>
+
+      <h3 class="text-xl font-bold text-gray-900">Обери, де зручно написати</h3>
+      <p class="mt-2 text-sm text-gray-600">
+        Надішліть фото або опис товару — підберемо найкращу ціну за 3–10 хв.
+      </p>
+
+      <div class="mt-5 grid gap-3">
+        <a href="https://t.me/admira1012" target="_blank"
+           class="flex items-center justify-center gap-2 rounded-xl bg-[#27A7E7] px-4 py-3 font-semibold text-white hover:opacity-95">
+          <span>🚀 Написати в Telegram</span>
+        </a>
+
+        <a href="viber://chat?number=%2B380970804428"
+           class="flex items-center justify-center gap-2 rounded-xl bg-[#7360F2] px-4 py-3 font-semibold text-white hover:opacity-95">
+          <span>💬 Написати у Viber</span>
+        </a>
+
+        <a href="https://m.me/YOUR_PAGE" target="_blank"
+           class="flex items-center justify-center gap-2 rounded-xl bg-[#1877F2] px-4 py-3 font-semibold text-white hover:opacity-95">
+          <span>📩 Написати у Messenger</span>
+        </a>
+      </div>
+
+      <!-- мікротекст -->
+      <p class="mt-4 text-xs text-gray-500">
+        Надішліть посилання/фото — одразу дамо ціну з 2–4 варіантів постачальників.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const modal = document.getElementById('quoteModal');
+    const openBtn = document.getElementById('openQuoteModal');
+    const closeBtn = document.getElementById('closeQuoteModal');
+
+    const open = () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+
+    openBtn?.addEventListener('click', open);
+    closeBtn?.addEventListener('click', close);
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  })();
+</script>
+
 
     <!-- Далі твій контент: #features, #how, #countries, #reviews, #contact -->
   </main>
@@ -504,7 +586,7 @@
             <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-white text-xs font-semibold">1</span>
           </div>
           <h3 class="mt-4 font-bold">Фото або опис</h3>
-          <p class="mt-2 text-gray-700">Надішліть товар у Telegram-бот.</p>
+          <p class="mt-2 text-gray-700">Завантажте фото або опис.</p>
         </div>
         <div class="rounded-2xl bg-gray-50 p-6 border border-gray-200">
           <div class="flex items-center gap-3">
