@@ -65,6 +65,21 @@
 
   gtag('config', 'AW-17496443090');
 </script>
+<script>
+  // універсальна функція для фіксації конверсії і переходу за посиланням
+  function reportConv(sendTo, url) {
+    var cb = function () {
+      if (typeof url !== 'undefined') window.location = url; // якщо потрібна нова вкладка, заміни на window.open(url,'_blank')
+    };
+    gtag('event', 'conversion', {
+      'send_to': sendTo,
+      'value': 1.0,
+      'currency': 'UAH',
+      'event_callback': cb
+    });
+    return false; // блокуємо миттєвий перехід, чекаємо callback
+  }
+</script>
 
   <!-- Anti-FOUC -->
   <style>
@@ -117,10 +132,6 @@
         <a href="umovy.html"           class="hover:text-indigo-600">Умови Співпраці</a>
         <a href="dostavka.html"        class="hover:text-indigo-600">Доставка</a>
         <a href="contacts.html"        class="hover:text-indigo-600">Контакти</a>
-        <a href="index.html#contact"
-           class="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500">
-          Спробувати
-        </a>
       </nav>
     </div>
   </div>
@@ -133,10 +144,6 @@
       <a href="umovy.html"           class="block px-3 py-2 rounded-lg hover:bg-gray-100">Умови Співпраці</a>
       <a href="dostavka.html"        class="block px-3 py-2 rounded-lg hover:bg-gray-100">Доставка</a>
       <a href="contacts.html"        class="block px-3 py-2 rounded-lg hover:bg-gray-100">Контакти</a>
-      <a href="index.html#contact"
-         class="block text-center px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500">
-        Спробувати
-      </a>
     </div>
   </nav>
 </header>
@@ -202,22 +209,24 @@
         Надішліть фото або опис товару — підберемо найкращу ціну за 3–10 хв.
       </p>
 
-      <div class="mt-5 grid gap-3">
-        <a href="https://t.me/admira1012" target="_blank"
-           class="flex items-center justify-center gap-2 rounded-xl bg-[#27A7E7] px-4 py-3 font-semibold text-white hover:opacity-95">
-          <span>🚀 Написати в Telegram</span>
-        </a>
+<div class="mt-5 grid gap-3">
 
-        <a href="viber://chat?number=%2B380970804428"
-           class="flex items-center justify-center gap-2 rounded-xl bg-[#7360F2] px-4 py-3 font-semibold text-white hover:opacity-95">
-          <span>💬 Написати у Viber</span>
-        </a>
+  <!-- Telegram -->
+<a href="https://t.me/tvijShoppingBot?start=google_ads"
+   target="_blank" rel="noopener"
+   onclick="return reportConv('AW-17496443090/hBW4CJrxhZAbENKR-pZB','https://t.me/tvijShoppingBot?start=google_ads')">
+  Написати в Telegram
+</a>
 
-        <a href="https://m.me/YOUR_PAGE" target="_blank"
-           class="flex items-center justify-center gap-2 rounded-xl bg-[#1877F2] px-4 py-3 font-semibold text-white hover:opacity-95">
-          <span>📩 Написати у Messenger</span>
-        </a>
-      </div>
+  <!-- Viber -->
+  <a href="viber://chat?number=%2B3809708804428"
+     onclick="return reportConv('AW-17496443090/KqpPCJ3xhZAbENKR-pZB','viber://chat?number=%2B3809708804428')"
+     class="flex items-center justify-center gap-2 rounded-xl bg-[#7360F2] px-4 py-3 font-semibold text-white hover:opacity-95">
+    <span>✉️ Написати у Viber</span>
+  </a>
+
+</div>
+
 
       <!-- мікротекст -->
       <p class="mt-4 text-xs text-gray-500">
@@ -1296,16 +1305,16 @@
     </div>
   </div>
 
-  <script>
-    (function(){
-      // Можеш відразу прописати свої URL тут:
-      const TELEGRAM_URL  = 'https://t.me/admira1012';
-      const VIBER_URL     = 'viber://chat?number=%2B380970804428'; // заміни на свій номер/чат
-      const MESSENGER_URL = 'https://m.me/yourpage';              // заміни на свою сторінку
+ <script>
+  (function () {
+    // URL-адреси месенджерів
+    const TELEGRAM_URL  = 'https://t.me/tvijShoppingBot?start=google_ads'; // ✅ лінк на бота
+    const VIBER_URL     = 'viber://chat?number=%2B380970804428';
+    const MESSENGER_URL = 'https://m.me/yourpage';
 
-      const FORMSPREE_ENDPOINT = ""; // якщо використовуєш — додай
+    const FORMSPREE_ENDPOINT = ""; // якщо використовуєш — додай
 
-      const form  = document.getElementById('leadForm');
+    const form  = document.getElementById('leadForm');
       const toast = document.getElementById('leadToast');
 
       // продублюємо посилання в кнопки (щоб було в одному місці)
@@ -1393,7 +1402,7 @@
         <ul class="space-y-2 text-sm">
           <li>Email: <a href="mailto:maioli.shop@gmail.com" class="hover:text-white">maioli.shop@gmail.com</a></li>
           <li>Телефон: <a href="tel:+380668049717" class="hover:text-white">+38 (066) 804-47-17</a></li>
-          <li>Telegram: <a href="https://t.me/admira1012" target="_blank" rel="noopener" class="hover:text-white">https://t.me/admira1012</a></li>
+          <li>Telegram: <a href="https://t.me/tvijShoppingBot" target="_blank" rel="noopener" class="hover:text-white">https://t.me/tvijShoppingBot</a></li>
         </ul>
       </div>
 
@@ -1402,7 +1411,7 @@
         <h4 class="text-white font-semibold mb-4">Спробуйте</h4>
         <div class="flex flex-col gap-3">
           <!-- Telegram -->
-          <a href="https://t.me/admira1012" target="_blank" rel="noopener"
+          <a href="https://t.me/tvijShoppingBot" target="_blank" rel="noopener"
              class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-500 transition">
             📩 Написати Telegram
           </a>
@@ -1485,9 +1494,8 @@
 <div class="fab-container">
   <button class="fab-main" onclick="toggleFab()">🔥 Отримай кращу оптову ціну</button>
   <div class="fab-options" id="fabOptions">
-    <button class="telegram" onclick="window.open('https://t.me/admira1012','_blank')">🚀 Написати в Telegram</button>
+    <button class="telegram" onclick="window.open('https://t.me/tvijShoppingBot','_blank')">🚀 Написати в Telegram</button>
     <button class="viber" onclick="window.open('viber://chat?number=%2B380970804428','_blank')">💬 Написати у Viber</button>
-    <button class="messenger" onclick="window.open('https://m.me/yourpage','_blank')">📩 Написати у Messenger</button>
   </div>
 </div>
 
